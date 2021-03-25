@@ -1,6 +1,6 @@
 # qcfirst
 
-## Visual Designs using Sigma
+## Visual Designs using Figma
 **Sign Up/Log In Page**
 - Students and Faculties can sign up using their QCfirst email addresses.
 - To sign up, the user needs to provide a username, password, and their first and last names.
