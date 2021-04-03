@@ -5,6 +5,109 @@
     <title>Search for courses</title>
 </head>
 <body>
+<div class="container">
+    <div class="searchContainer">
+        <input type="text" id="search" name="search" placeholder="search">
+        <label for="term">Term</label>
+        <input type="text" id="term" name="term" value="Fall 2021">
+        <div class="searchFilter">
+            <h3>Class Search Filter</h3>
+            <form>
+                <label for="subject">Subject:</label>
+                <select name="subject" id="subject">
+                    <option value="anth">Anthropology</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="math">Mathematics</option>
+                    <option value="music">Music</option>
+                </select>
+                <br>
+                <label for="courseRange">Course Range:</label>
+                <select name="courseRange" id="courseRange">
+                    <option value="exactly">is exactly</option>
+                    <option value="gte">Greater than or equal to</option>
+                    <option value="lte">Less than or equal to</option>
+                    <option value="contains">Contains</option>
+                </select>
+                <label for="courseNum">Course Number:</label>
+                <input type="text" id="courseNum" name="courseNum" placeholder="101">
+                <br>
+                <label for="courseCareer">Course Career:</label>
+                <select name="courseCareer" id="courseCareer">
+                    <option value="grad">Graduate</option>
+                    <option value="undergrad">Undergraduate </option>
+                </select>
+                <br>
+                <label for="requirement">Requirement Designation:</label>
+                <select name="requirement" id="requirement">
+                    <option value="ce">Creative Expression</option>
+                    <option value="is">Individual and Society</option>
+                    <option value="sw">Scientific World</option>
+                    <option value="used">US Experience in its Diversity</option>
+                    <option value="wigi">World Issues & Global Issues</option>
+                    <option value="ec">English Composition</option>
+                    <option value="lps">Life and Physical Science</option>
+                    <option value="mqr">Mathematical & Quantitative Reasoning</option>
+                </select>
+            </form>
+            <p>Display Open Classes Only</p>
+            <input type="checkbox" id="classStatus" name="classStatus">
+        </div>
+        <div class="advancedSearchFilter">
+            <h3>Advanced Class Search Filter</h3>
+            <form action="">
+                <label for="modeOfIns">Mode of Instruction:</label>
+                <select name="modeOfIns" id="modeOfIns">
+                    <option value="hybrid">Hybrid</option>
+                    <option value="inPerson">In-person</option>
+                    <option value="online">Online</option>
+                </select>
+                <br>
+                <label for="startTime">Start Time:</label>
+                <select name="startTime" id="startTime">
+                    <option value="between">Between</option>
+                    <option value="gt">Greater than</option>
+                    <option value="gte">Greater than or Equal to</option>
+                    <option value="exactly">Exactly</option>
+                    <option value="lt">Less than</option>
+                    <option value="lte">Less than or Equal to</option>
+                </select>
+                <label for="startTimeText">Time:</label>
+                <input type="text" id="startTimeText" name="startTimeText" placeholder="1:40pm">
+                <br>
+                <label for="endTime">End Time:</label>
+                <select name="endTime" id="endTime">
+                    <option value="between">Between</option>
+                    <option value="gt">Greater than</option>
+                    <option value="gte">Greater than or Equal to</option>
+                    <option value="exactly">Exactly</option>
+                    <option value="lt">Less than</option>
+                    <option value="lte">Less than or Equal to</option>
+                </select>
+                <label for="endTimeText">Time:</label>
+                <input type="text" id="endTimeText" name="startTimeText" placeholder="2:55pm">
+                <br>
+                <label for="instructorsName">Instructor's Name:</label>
+                <input type="text" id="instructorsName" name="instructorsName" placeholder="Abramov">
+                <br>
+                <label for="mon">Mon</label>
+                <input type="checkbox" id="mon" name="mon">
+                <label for="tues">Tues</label>
+                <input type="checkbox" id="tues" name="tues">
+                <label for="wed">Wed</label>
+                <input type="checkbox" id="wed" name="wed">
+                <label for="thurs">Thurs</label>
+                <input type="checkbox" id="thurs" name="thurs">
+                <label for="fri">Fri</label>
+                <input type="checkbox" id="fri" name="fri">
+                <label for="sat">Sat</label>
+                <input type="checkbox" id="sat" name="sat">
+                <label for="sun">Sun</label>
+                <input type="checkbox" id="sun" name="sun">
+            </form>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
