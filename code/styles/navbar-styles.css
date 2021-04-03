@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: #24252A;
+} */
+
+li, a, button {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.navbar-container {
+    background-color: #DB2525;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    transition: all 0.3 ease 0s;
+}
+
+.nav-links li a:hover {
+    color: #000000;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgb(219, 37, 37, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.nav-link-dropdown-content, .profile-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(219, 37, 37, 1);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.nav-link-dropdown-content a, .profile-dropdown-content a {
+    float: none;
+    color: #edf0f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.profile-dropdown button:hover {
+    color: #000000;
+    background-color: rgb(219, 37, 37, 0.9);
+}
+
+.nav-links li:hover .nav-link-dropdown-content, .profile-dropdown:hover .profile-dropdown-content {
+    display: block;
+}
+
+.nav-link-dropdown-content a:hover, .profile-dropdown-content a:hover {
+    color: #000000;
+}
