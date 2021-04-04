@@ -3,31 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Log In</title>
+        <title>Log In - QCFirst</title>
         <link rel="stylesheet" href="styles/login-styles.css">
     </head>
     <body>
         <div class="bg-image"></div>
         <div class="login-container">
-            <img class="logo" src="images/qclogo.png" alt="logo" width="250px" height="auto">
+            <img class="logo" src="images/qclogo.png" alt="logo">
             <div class="login-box">
                 <h1 class="login-text">QCFirst Login</h2>
                 <form action="" class="login-form">
                     <!--Login fields-->
                     <label for="user-email">User Email</label><br>
-                    <input class="input-box" type="email" id="user-email" name="user-email" size="35"><br>
+                    <input class="input-box" type="email" id="user-email" name="user-email" size="35" required><br>
                     <label for="user-password">Password</label><br>
-                    <input class="input-box" type="password" id="user-password" name="user-password" size="35"><br>
+                    <input class="input-box" type="password" id="user-password" name="user-password" size="35" required><br>
                     <!--Login as-->
                     <p>Login as:</p>
-                    <input class="radio-btn" type="radio" id="student-radio" name="account-type" value="student">
+                    <input class="radio-btn" type="radio" id="student-radio" name="account-type" value="student" required>
                     <label class="radio-btn" for="student-radio">Student</label>
                     <input class="radio-btn" type="radio" id="faculty-radio" name="account-type" value="faculty">
                     <label class="radio-btn" for="faculty-Radio">Faculty</label><br>
                     <!--Submit buttons-->
-                    <button class="login-btn" type="button">Log In</button>
+                    <button class="login-btn" type="submit" value="Submit">Log In</button>
                     <p class="new-user-text">New User?</p>
-                    <button class="sign-up-btn"type="button">Sign Up</button>
+                    <a href="signUp.html">
+                        <button class="sign-up-btn"type="button">Sign Up</button>
+                    </a>
                 </form>
             </div>
         </div>

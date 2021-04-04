@@ -22,7 +22,7 @@ body, html {
     background-repeat: no-repeat;
 }
 
-.login-container {
+.sign-up-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,17 +31,17 @@ body, html {
 
 .logo {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 18%;
     width: 300px;
     height: auto;
 }
 
-.login-box {
+.sign-up-box {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 30%;
+    top: 8%;
     width: 240px;
     height: auto;
     padding: 20px 60px;
@@ -52,7 +52,7 @@ body, html {
     justify-content: center;
 }
 
-.login-text {
+.sign-up-text {
     color: #ffffff;
     font-size: 28px;
 }
@@ -88,3 +88,9 @@ body, html {
     width: 285px;
     height: 45px;
 }
+
+@media screen and (max-width: 1500px) {
+    .logo {
+        display: none;
+    }
+  }
