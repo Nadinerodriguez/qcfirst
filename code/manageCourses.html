@@ -2,9 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Manage Courses</title>
+    <link rel="stylesheet" href="styles/navbar-styles.css">
+    <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<!-- Nav bar-->
+<header>
+    <div class="navbar">
+        <img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto">
+        <nav class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Course Search</a></li>
+                <li>
+                    <a href="#">My Courses
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="nav-link-dropdown-content">
+                        <a href="#">Course Planner</a>
+                        <a href="#">Course Enrollment</a>
+                        <a href="#">Manage Courses</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-dropdown">
+            <button>Daniel Rodriguez
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="profile-dropdown-content">
+                <a href="#">Profile</a>
+                <a href="#">Edit Profile</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="enrollmentContainer">
+        <h2>My Courses</h2>
+        <p>CS 320 Section1 M/W 1:45pm-2:55pm</p>
+        <input type="checkbox" id="cs320" name="cs320" value="cs320">
+        <p>CS 316 Section5 M/W 3:10pm-4:25pm</p>
+        <input type="checkbox" id="cs316" name="cs316" value="cs316" checked>
+        <p>MATH 201 Section1 T/Th 1:45pm-2:55pm</p>
+        <input type="checkbox" id="math201" name="math201" value="math201">
+        <p>HIST 104 Section1 M/W 4:30pm-5:45pm</p>
+        <input type="checkbox" id="hist104" name="hist104" value="hist104">
+        <br>
+        <input type="button" id="update" name="update" value="Update">
+        <input type="button" id="delete" name="delete" value="Delete">
+    </div>
+    <div class="createCourse">
+        <h3>Create Course</h3>
+        <form action="">
+            <label for="semester">Semester</label>
+            <br>
+            <select name="semester" id="semester">
+                <option value="spring2021">Spring 2021</option>
+                <option value="summer2021">Summer 2021</option>
+                <option value="fall2021">Fall 2021</option>
+            </select>
+            <br>
+            <label for="department">Department</label>
+            <br>
+            <select name="department" id="department">
+                <option value="anth">Anthropology</option>
+                <option value="cs">Computer Science</option>
+                <option value="math">Mathematics</option>
+            </select>
+            <br>
+            <label for="courseName">Course Name</label>
+            <br>
+            <select name="courseName" id="courseName">
+                <option value="cs320">CS 320</option>
+                <option value="cs313">CS 316</option>
+                <option value="math201">Math 201</option>
+            </select>
+            <br>
+            <label for="courseCap">Course Capacity</label>
+            <br>
+            <input type="text" id="courseCap" name="courseCap" placeholder="35">
+            <br>
+            <p>Days taught:</p>
+            <label for="mon">Mon</label>
+            <input type="checkbox" id="mon" name="mon" checked>
+            <label for="tues">Tues</label>
+            <input type="checkbox" id="tues" name="tues">
+            <label for="wed">Wed</label>
+            <input type="checkbox" id="wed" name="wed" checked>
+            <label for="thurs">Thurs</label>
+            <input type="checkbox" id="thurs" name="thurs">
+            <label for="fri">Fri</label>
+            <input type="checkbox" id="fri" name="fri">
+            <label for="sat">Sat</label>
+            <input type="checkbox" id="sat" name="sat">
+            <label for="sun">Sun</label>
+            <input type="checkbox" id="sun" name="sun">
+            <br>
+            <label for="startTimeText">Start Time:</label>
+            <input type="text" id="startTimeText" name="startTimeText" placeholder="2:55pm">
+            <label for="endTimeText">End Time:</label>
+            <input type="text" id="endTimeText" name="startTimeText" placeholder="2:55pm">
+            <br>
+            <label for="courseDescript">Course Description</label>
+            <br>
+            <textarea id="courseDescript" name="courseDescript" rows="5" cols="50"></textarea>
+            <br>
+            <input type="button" id="create" name="create" value="Create">
+        </form>
+
+    </div>
+</div>
 
 </body>
 </html>
