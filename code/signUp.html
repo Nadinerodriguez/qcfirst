@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sign Up - QCFirst</title>
+        <link rel="stylesheet" href="styles/signup-styles.css">
+    </head>
+    <body>
+        <div class="bg-image"></div>
+        <div class="sign-up-container">
+            <img class="logo" src="images/qclogo.png" alt="logo">
+            <div class="sign-up-box">
+                <h1 class="sign-up-text">QCFirst Sign Up</h2>
+                <form action="" class="sign-up-form">
+                    <!--Sign up fields-->
+                    <label for="first-name">First Name</label><br>
+                    <input class="input-box" type="text" id="first-name" name="first-name" size="35" required><br>
+                    <label for="last-name">Last Name</label><br>
+                    <input class="input-box" type="text" id="last-name" name="last-name" size="35" required><br>
 
-</body>
+                    <label for="user-email">User Email</label><br>
+                    <input class="input-box" type="email" id="user-email" name="user-email" size="35" required><br>
+                    <label for="confirm-user-email">Confirm User Email</label><br>
+                    <input class="input-box" type="email" id="confirm-user-email" name="confirm-user-email" size="35" required><br>
+
+                    <label for="user-password">Password</label><br>
+                    <input class="input-box" type="password" id="user-password" name="user-password" size="35" required><br>
+                    <label for="confirm-user-password">Confirm Password</label><br>
+                    <input class="input-box" type="password" id="confirm-user-password" name="confirm-user-password" size="35" required><br>
+
+                    <!--Register as-->
+                    <p>Register as:</p>
+                    <input class="radio-btn" type="radio" id="student-radio" name="account-type" value="student" required>
+                    <label class="radio-btn" for="student-radio">Student</label>
+                    <input class="radio-btn" type="radio" id="faculty-radio" name="account-type" value="faculty">
+                    <label class="radio-btn" for="faculty-Radio">Faculty</label><br>
+                    <!--Submit buttons-->
+                    <button class="sign-up-btn" type="submit" value="Submit">Sign Up</button>
+                    <p class="returning-user-text">Returning User?</p>
+                    <a href="logIn.html">
+                        <button class="login-btn" type="button">Log In</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </body>
 </html>
