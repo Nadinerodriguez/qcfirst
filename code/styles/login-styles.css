@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body, html {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.bg-image {
+    /*grab the image*/
+    background-image: url("../images/login-background.jpg");
+
+    /*blur the image*/
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    height: 100%;
+    background-position-x: 75%;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    position: absolute;
+    top: 10%;
+    left: 18%;
+    width: 300px;
+    height: auto;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    width: 240px;
+    height: auto;
+    padding: 20px 60px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-text {
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.input-box {
+    height: 25px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 5px;
+}
+
+.radio-btn {
+    margin-bottom: 25px;
+}
+
+.new-user-text {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.login-btn, .sign-up-btn {
+    color: #ffffff;
+    background-color: #DB2525;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 0px 5px;
+    cursor: pointer;
+    width: 285px;
+}
+}

@@ -4,41 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Log In</title>
-        <link rel="stylesheet" href="styles/navbar-styles.css">
-        <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles/login-styles.css">
     </head>
     <body>
-        <!-- Nav bar-->
-        <header>
-            <div class="navbar">
-                <img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto">
-                <nav class="navbar-container">
-                    <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Course Search</a></li>
-                        <li>
-                            <a href="#">My Courses 
-                                <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <div class="nav-link-dropdown-content">
-                                <a href="#">Course Planner</a>
-                                <a href="#">Course Enrollment</a>
-                                <a href="#">Manage Courses</a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="profile-dropdown">
-                    <button>Daniel Rodriguez
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="profile-dropdown-content">
-                        <a href="#">Profile</a>
-                        <a href="#">Edit Profile</a>
-                        <a href="#">Logout</a>
-                    </div>
-                </div>
+        <div class="bg-image"></div>
+        <div class="login-container">
+            <img class="logo" src="images/qclogo.png" alt="logo" width="250px" height="auto">
+            <div class="login-box">
+                <h1 class="login-text">QCFirst Login</h2>
+                <form action="" class="login-form">
+                    <!--Login fields-->
+                    <label for="user-email">User Email</label><br>
+                    <input class="input-box" type="email" id="user-email" name="user-email" size="35"><br>
+                    <label for="user-password">Password</label><br>
+                    <input class="input-box" type="password" id="user-password" name="user-password" size="35"><br>
+                    <!--Login as-->
+                    <p>Login as:</p>
+                    <input class="radio-btn" type="radio" id="student-radio" name="account-type" value="student">
+                    <label class="radio-btn" for="student-radio">Student</label>
+                    <input class="radio-btn" type="radio" id="faculty-radio" name="account-type" value="faculty">
+                    <label class="radio-btn" for="faculty-Radio">Faculty</label><br>
+                    <!--Submit buttons-->
+                    <button class="login-btn" type="button">Log In</button>
+                    <p class="new-user-text">New User?</p>
+                    <button class="sign-up-btn"type="button">Sign Up</button>
+                </form>
             </div>
-        </header>
+        </div>
     </body>
 </html>
