@@ -2,9 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homepage</title>
+    <link rel="stylesheet" href="styles/navbar-styles.css">
+    <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<!-- Nav bar-->
+<header>
+    <div class="navbar">
+        <img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto">
+        <nav class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Course Search</a></li>
+                <li>
+                    <a href="#">My Courses
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="nav-link-dropdown-content">
+                        <a href="#">Course Planner</a>
+                        <a href="#">Course Enrollment</a>
+                        <a href="#">Manage Courses</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-dropdown">
+            <button>Daniel Rodriguez
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="profile-dropdown-content">
+                <a href="#">Profile</a>
+                <a href="#">Edit Profile</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="dashboardProf">
+        <h3>Welcome back, Daniel Rodriguez!</h3>
+        <p>Email:</p>
+        <p>daniel.rodriguez74@qmail.cuny.edu</p>
+        <p>ID:</p>
+        <p>1234 5678</p>
+        <p>Major:</p>
+        <p>Computer Science, B.S</p>
+    </div>
+    <div class="extraInfo">
+        <h3>Announcements</h3>
+        <p>You have until May 22nd, 2021 to apply for on campus parking permits for Fall 2021 - Summer 2022.</p>
+        <h3>Holds</h3>
+        <p>No holds.</p>
+        <h3>Enrollment Date</h3>
+        <p>2021 Fall Term Regular Academic Session on April 8, 2021, 8:00am.</p>
+    </div>
 
+</div>
 </body>
 </html>
