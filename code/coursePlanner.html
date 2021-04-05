@@ -2,9 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My courses planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Courses Planner</title>
+    <link rel="stylesheet" href="styles/navbar-styles.css">
+    <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<!-- Nav bar-->
+<header>
+    <div class="navbar">
+        <img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto">
+        <nav class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Course Search</a></li>
+                <li>
+                    <a href="#">My Courses
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="nav-link-dropdown-content">
+                        <a href="#">Course Planner</a>
+                        <a href="#">Course Enrollment</a>
+                        <a href="#">Manage Courses</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-dropdown">
+            <button>Daniel Rodriguez
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="profile-dropdown-content">
+                <a href="#">Profile</a>
+                <a href="#">Edit Profile</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+<header>
+    <div class="navbar">
+        <img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto">
+        <nav class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Course Search</a></li>
+                <li>
+                    <a href="#">My Courses
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="nav-link-dropdown-content">
+                        <a href="#">Course Planner</a>
+                        <a href="#">Course Enrollment</a>
+                        <a href="#">Manage Courses</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-dropdown">
+            <button>Daniel Rodriguez
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="profile-dropdown-content">
+                <a href="#">Profile</a>
+                <a href="#">Edit Profile</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <form>
+        <label for="term">Term:</label>
+        <select name="term" id="term">
+            <option value="spring2021">Spring 2021</option>
+            <option value="summer2021">Summer 2021</option>
+            <option value="fall2021">Fall 2021</option>
+        </select>
+    </form>
+    <div class="enrollmentContainer">
+        <h2>Enrollment Courses</h2>
+        <p>CS 320 Section1 M/W 1:45pm-2:55pm</p>
+        <input type="checkbox" id="cs320" name="cs320" value="cs320" checked>
+        <p>CS 316 Section5 M/W 3:10pm-4:25pm</p>
+        <input type="checkbox" id="cs316" name="cs316" value="cs316" checked>
+        <p>MATH 201 Section1 T/Th 1:45pm-2:55pm</p>
+        <input type="checkbox" id="math201" name="math201" value="math201" checked>
+        <p>HIST 104 Section1 M/W 4:30pm-5:45pm</p>
+        <input type="checkbox" id="hist104" name="hist104" value="hist104" checked>
+        <br>
+        <input type="button" id="manage" name="manage" value="Manage">
+    </div>
+    <div class="plannedContainer">
+        <h2>Planned Courses</h2>
+        <p>CS 343 Section7 M/W 6:30pm-7:45pm</p>
+        <input type="checkbox" id="cs343" name="cs343" value="cs343">
+        <p>ANTH 102 Section11 M/W 10:45am-12:00pm</p>
+        <input type="checkbox" id="anth102" name="anth102" value="anth102">
+        <p>MUSIC 1 Section16 F 1:00pm-4:55pm</p>
+        <input type="checkbox" id="music1" name="music1" value="music1" checked>
+        <br>
+        <input type="button" id="enroll" name="enroll" value="Enroll">
+    </div>
+</div>
 
 </body>
 </html>

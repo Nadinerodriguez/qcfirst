@@ -42,9 +42,15 @@
 </header>
 <div class="container">
     <div class="searchContainer">
-        <input type="text" id="search" name="search" placeholder="search">
-        <label for="term">Term</label>
-        <input type="text" id="term" name="term" value="Fall 2021">
+        <form>
+            <input type="text" id="search" name="search" placeholder="search">
+            <label for="term">Term:</label>
+            <select name="term" id="term">
+                <option value="spring2021">Spring 2021</option>
+                <option value="summer2021">Summer 2021</option>
+                <option value="fall2021">Fall 2021</option>
+            </select>
+        </form>
         <div class="searchFilter">
             <h3>Class Search Filter</h3>
             <form>
