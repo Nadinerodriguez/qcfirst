@@ -88,3 +88,13 @@ body, html {
     width: 285px;
     height: 45px;
 }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(219, 37, 37, 1);
+    color: white;
+    text-align: center;
+}
