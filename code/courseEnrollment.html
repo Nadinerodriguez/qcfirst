@@ -11,61 +11,81 @@
 <!-- Nav bar-->
 <header>
     <div class="navbar">
-        <img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto">
+        <a href="homepage.html"><img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto"></a>
         <nav class="navbar-container">
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Course Search</a></li>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="courseSearch.html">Course Search</a></li>
                 <li>
-                    <a href="#">My Courses
+                    <a href="coursePlanner.html">My Courses
                         <i class="fas fa-chevron-down"></i>
                     </a>
                     <div class="nav-link-dropdown-content">
-                        <a href="#">Course Planner</a>
-                        <a href="#">Course Enrollment</a>
-                        <a href="#">Manage Courses</a>
+                        <a href="coursePlanner.html">Course Planner</a>
+                        <a href="courseEnrollment.html">Course Enrollment</a>
+                        <a href="manageCourses.html">Manage Courses</a>
                     </div>
                 </li>
             </ul>
         </nav>
         <div class="profile-dropdown">
-            <button>Daniel Rodriguez
+            <button class="nav-btn">Daniel Rodriguez
                 <i class="fas fa-chevron-down"></i>
             </button>
             <div class="profile-dropdown-content">
-                <a href="#">Profile</a>
+                <a href="homepage.html">Profile</a>
                 <a href="#">Edit Profile</a>
-                <a href="#">Logout</a>
+                <a href="login.html">Logout</a>
             </div>
         </div>
     </div>
 </header>
 <div class="container">
+    <h1>Course Enrollment</h1>
+    <form>
+        <label for="term">Term:</label>
+        <select name="term" id="term">
+            <option value="spring2021">Spring 2021</option>
+            <option value="summer2021">Summer 2021</option>
+            <option value="fall2021">Fall 2021</option>
+        </select>
+    </form>
     <div class="enrollmentContainer">
-        <h2>Enrollment Courses</h2>
-        <p>CS 320 Section1 M/W 1:45pm-2:55pm</p>
-        <input type="checkbox" id="cs320" name="cs320" value="cs320">
-        <p>CS 316 Section5 M/W 3:10pm-4:25pm</p>
-        <input type="checkbox" id="cs316" name="cs316" value="cs316">
-        <p>MATH 201 Section1 T/Th 1:45pm-2:55pm</p>
-        <input type="checkbox" id="math201" name="math201" value="math201" checked>
-        <p>HIST 104 Section1 M/W 4:30pm-5:45pm</p>
-        <input type="checkbox" id="hist104" name="hist104" value="hist104">
-        <br>
-        <input type="button" id="drop" name="drop" value="Drop">
+        <h2>Enrolled Courses</h2>
+        <form action="coursePlanner.html">
+            <label for="enrolled-course1">CS 320 Section1 M/W 1:45pm-2:55pm</label>
+            <input type="checkbox" id="enrolled-course1" name="cs320" value="cs320">
+            <br>
+            <label for="enrolled-course2">CS 316 Section5 M/W 3:10pm-4:25pm</label>
+            <input type="checkbox" id="enrolled-course2" name="cs316" value="cs316">
+            <br>
+            <label for="enrolled-course3">MATH 201 Section1 T/Th 1:45pm-2:55pm</label>
+            <input type="checkbox" id="enrolled-course3" name="math201" value="math201">
+            <br>
+            <label for="enrolled-course4">HIST 104 Section1 M/W 4:30pm-5:45pm</label>
+            <input type="checkbox" id="enrolled-course4" name="hist104" value="hist104" checked>
+            <br>
+            <input type="button" id="drop" name="drop" value="Drop Selected">
+        </form>
     </div>
     <div class="plannedContainer">
         <h2>Planned Courses</h2>
-        <p>CS 343 Section7 M/W 6:30pm-7:45pm</p>
-        <input type="checkbox" id="cs343" name="cs343" value="cs343">
-        <p>ANTH 102 Section11 M/W 10:45am-12:00pm</p>
-        <input type="checkbox" id="anth102" name="anth102" value="anth102">
-        <p>MUSIC 1 Section16 F 1:00pm-4:55pm</p>
-        <input type="checkbox" id="music1" name="music1" value="music1" checked>
-        <br>
-        <input type="button" id="remove" name="remove" value="Remove">
-        <input type="button" id="swap" name="swap" value="Swap">
-        <input type="button" id="enroll" name="enroll" value="Enroll">
+        <form action="coursePlanner.html">
+            <label for="planned-course1">CS 343 Section7 M/W 6:30pm-7:45pm</label>
+            <input type="checkbox" id="planned-course1" name="cs343" value="cs343">
+            <br>
+            <label for="planned-course2">ANTH 102 Section11 M/W 10:45am-12:00pm</label>
+            <input type="checkbox" id="planned-course2" name="anth102" value="anth102">
+            <br>
+            <label for="planned-course3">MUSIC 1 Section16 F 1:00pm-4:55pm</label>
+            <input type="checkbox" id="planned-course3" name="music1" value="music1" checked>
+            <br>
+            <input type="button" id="remove" name="remove" value="Remove Selected">
+            <input type="button" id="swap" name="swap" value="Swap Selected">
+            <input type="button" id="enroll" name="enroll" value="Enroll Selected">
+            <br>
+            <input type="submit" id="go-to-planner" name="planner" value="Proceed to Planner">
+        </form>
     </div>
 </div>
 

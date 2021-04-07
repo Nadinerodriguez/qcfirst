@@ -6,41 +6,43 @@
     <title>Search for courses</title>
     <link rel="stylesheet" href="styles/navbar-styles.css">
     <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/course-search-styles.css">
 </head>
 <body>
 <!-- Nav bar-->
 <header>
     <div class="navbar">
-        <img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto">
+        <a href="homepage.html"><img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto"></a>
         <nav class="navbar-container">
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Course Search</a></li>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="courseSearch.html">Course Search</a></li>
                 <li>
-                    <a href="#">My Courses
+                    <a href="coursePlanner.html">My Courses
                         <i class="fas fa-chevron-down"></i>
                     </a>
                     <div class="nav-link-dropdown-content">
-                        <a href="#">Course Planner</a>
-                        <a href="#">Course Enrollment</a>
-                        <a href="#">Manage Courses</a>
+                        <a href="coursePlanner.html">Course Planner</a>
+                        <a href="courseEnrollment.html">Course Enrollment</a>
+                        <a href="manageCourses.html">Manage Courses</a>
                     </div>
                 </li>
             </ul>
         </nav>
         <div class="profile-dropdown">
-            <button>Daniel Rodriguez
+            <button class="nav-btn">Daniel Rodriguez
                 <i class="fas fa-chevron-down"></i>
             </button>
             <div class="profile-dropdown-content">
-                <a href="#">Profile</a>
+                <a href="homepage.html">Profile</a>
                 <a href="#">Edit Profile</a>
-                <a href="#">Logout</a>
+                <a href="login.html">Logout</a>
             </div>
         </div>
     </div>
 </header>
 <div class="container">
+    <h1>Course Search</h1>
     <div class="searchContainer">
         <form>
             <input type="text" id="search" name="search" placeholder="search">
@@ -90,7 +92,7 @@
                     <option value="mqr">Mathematical & Quantitative Reasoning</option>
                 </select>
             </form>
-            <p>Display Open Classes Only</p>
+            <label for="classStatus">Display Open Classes Only</label>
             <input type="checkbox" id="classStatus" name="classStatus" checked>
         </div>
         <div class="advancedSearchFilter">
@@ -150,6 +152,7 @@
     <div class="cardsContainer">
         <h3>CS 111: Introduction to Algorithmic Problem-Solving</h3>
         <h3>Semester: Fall 2021</h3>
+        <br>
         <div class="card1">
             <h4>Days & Times:</h4>
             <p>M/W 7:45am-9:00am</p>
@@ -163,7 +166,11 @@
             <p>Science Building C205</p>
             <h4>Enrolled:</h4>
             <p>58/60</p>
+            <button class="status-btn">Open</button>
+            <button class="add-btn">Add to planner</button>
+            <button class="enroll-btn">Enroll</button>
         </div>
+        <br>
         <div class="card2">
             <h4>Days & Times:</h4>
             <p>M/W 7:45am-9:00am</p>
@@ -177,7 +184,11 @@
             <p>Science Building C205</p>
             <h4>Enrolled:</h4>
             <p>58/60</p>
+            <button class="status-btn">Open</button>
+            <button class="add-btn">Add to planner</button>
+            <button class="enroll-btn">Enroll</button>
         </div>
+        <br>
         <div class="card3">
             <h4>Days & Times:</h4>
             <p>M/W 7:45am-9:00am</p>
@@ -191,9 +202,14 @@
             <p>Science Building C205</p>
             <h4>Enrolled:</h4>
             <p>58/60</p>
+            <button class="status-btn">Open</button>
+            <button class="add-btn">Add to planner</button>
+            <button class="enroll-btn">Enroll</button>
         </div>
+        <br>
         <h3>CS 211:Object-Oriented Programming in Java</h3>
         <h3>Semester: Fall 2021</h3>
+        <br>
         <div class="card4">
             <h4>Days & Times:</h4>
             <p>M/W 7:45am-9:00am</p>
@@ -207,7 +223,11 @@
             <p>Science Building C205</p>
             <h4>Enrolled:</h4>
             <p>58/60</p>
+            <button class="status-btn">Open</button>
+            <button class="add-btn">Add to planner</button>
+            <button class="enroll-btn">Enroll</button>
         </div>
+        <br>
         <div class="card5">
             <h4>Days & Times:</h4>
             <p>M/W 7:45am-9:00am</p>
@@ -221,7 +241,11 @@
             <p>Science Building C205</p>
             <h4>Enrolled:</h4>
             <p>58/60</p>
+            <button class="status-btn">Open</button>
+            <button class="add-btn">Add to planner</button>
+            <button class="enroll-btn">Enroll</button>
         </div>
+        <br>
         <div class="card6">
             <h4>Days & Times:</h4>
             <p>M/W 7:45am-9:00am</p>
@@ -235,7 +259,11 @@
             <p>Science Building C205</p>
             <h4>Enrolled:</h4>
             <p>58/60</p>
+            <button class="status-btn">Open</button>
+            <button class="add-btn">Add to planner</button>
+            <button class="enroll-btn">Enroll</button>
         </div>
+        <br>
         <div class="card7">
             <h4>Days & Times:</h4>
             <p>M/W 7:45am-9:00am</p>
@@ -249,6 +277,9 @@
             <p>Science Building C205</p>
             <h4>Enrolled:</h4>
             <p>58/60</p>
+            <button class="status-btn">Open</button>
+            <button class="add-btn">Add to planner</button>
+            <button class="enroll-btn">Enroll</button>
         </div>
     </div>
 </div>
