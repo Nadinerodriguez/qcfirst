@@ -11,31 +11,31 @@
 <!-- Nav bar-->
 <header>
     <div class="navbar">
-        <img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto">
+        <a href="homepage.html"><img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto"></a>
         <nav class="navbar-container">
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Course Search</a></li>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="courseSearch.html">Course Search</a></li>
                 <li>
-                    <a href="#">My Courses
+                    <a href="coursePlanner.html">My Courses
                         <i class="fas fa-chevron-down"></i>
                     </a>
                     <div class="nav-link-dropdown-content">
-                        <a href="#">Course Planner</a>
-                        <a href="#">Course Enrollment</a>
-                        <a href="#">Manage Courses</a>
+                        <a href="coursePlanner.html">Course Planner</a>
+                        <a href="courseEnrollment.html">Course Enrollment</a>
+                        <a href="manageCourses.html">Manage Courses</a>
                     </div>
                 </li>
             </ul>
         </nav>
         <div class="profile-dropdown">
-            <button>Daniel Rodriguez
+            <button class="nav-btn">Daniel Rodriguez
                 <i class="fas fa-chevron-down"></i>
             </button>
             <div class="profile-dropdown-content">
-                <a href="#">Profile</a>
+                <a href="homepage.html">Profile</a>
                 <a href="#">Edit Profile</a>
-                <a href="#">Logout</a>
+                <a href="login.html">Logout</a>
             </div>
         </div>
     </div>
@@ -43,20 +43,23 @@
 <div class="container">
     <div class="enrollmentContainer">
         <h2>My Courses</h2>
-        <p>CS 320 Section1 M/W 1:45pm-2:55pm</p>
+        <label for="cs320">CS 320 Section1 M/W 1:45pm-2:55pm</label>
         <input type="checkbox" id="cs320" name="cs320" value="cs320">
-        <p>CS 316 Section5 M/W 3:10pm-4:25pm</p>
+        <br>
+        <label for="cs316">CS 316 Section5 M/W 3:10pm-4:25pm</label>
         <input type="checkbox" id="cs316" name="cs316" value="cs316" checked>
-        <p>MATH 201 Section1 T/Th 1:45pm-2:55pm</p>
+        <br>
+        <label for="math201">MATH 201 Section1 T/Th 1:45pm-2:55pm</label>
         <input type="checkbox" id="math201" name="math201" value="math201">
-        <p>HIST 104 Section1 M/W 4:30pm-5:45pm</p>
+        <br>
+        <label for="hist104">HIST 104 Section1 M/W 4:30pm-5:45pm</label>
         <input type="checkbox" id="hist104" name="hist104" value="hist104">
         <br>
         <input type="button" id="update" name="update" value="Update">
-        <input type="button" id="delete" name="delete" value="Delete">
+        <input type="button" id="delete" name="delete" value="Delete/Close">
     </div>
     <div class="createCourse">
-        <h3>Create Course</h3>
+        <h2>Create Course</h2>
         <form action="">
             <label for="semester">Semester</label>
             <br>
@@ -109,7 +112,7 @@
             <br>
             <label for="courseDescript">Course Description</label>
             <br>
-            <textarea id="courseDescript" name="courseDescript" rows="5" cols="50"></textarea>
+            <textarea id="courseDescript" name="courseDescript" rows="5" cols="50" placeholder="Provide a course description."></textarea>
             <br>
             <input type="button" id="create" name="create" value="Create">
         </form>

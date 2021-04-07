@@ -50,7 +50,7 @@ header .navbar {
     color: #000000;
 }
 
-button {
+.nav-btn {
     padding: 9px 25px;
     background-color: rgb(219, 37, 37, 1);
     border: none;
