@@ -41,6 +41,7 @@
     </div>
 </header>
 <div class="container">
+    <h1>Course Enrollment</h1>
     <form>
         <label for="term">Term:</label>
         <select name="term" id="term">
@@ -50,35 +51,41 @@
         </select>
     </form>
     <div class="enrollmentContainer">
-        <h2>Enrollment Courses</h2>
-        <label for="enrolled-course1">CS 320 Section1 M/W 1:45pm-2:55pm</label>
-        <input type="checkbox" id="enrolled-course1" name="cs320" value="cs320">
-        <br>
-        <label for="enrolled-course2">CS 316 Section5 M/W 3:10pm-4:25pm</label>
-        <input type="checkbox" id="enrolled-course2" name="cs316" value="cs316">
-        <br>
-        <label for="enrolled-course3">MATH 201 Section1 T/Th 1:45pm-2:55pm</label>
-        <input type="checkbox" id="enrolled-course3" name="math201" value="math201">
-        <br>
-        <label for="enrolled-course4">HIST 104 Section1 M/W 4:30pm-5:45pm</label>
-        <input type="checkbox" id="enrolled-course4" name="hist104" value="hist104" checked>
-        <br>
-        <input type="button" id="drop" name="drop" value="Drop">
+        <h2>Enrolled Courses</h2>
+        <form action="coursePlanner.html">
+            <label for="enrolled-course1">CS 320 Section1 M/W 1:45pm-2:55pm</label>
+            <input type="checkbox" id="enrolled-course1" name="cs320" value="cs320">
+            <br>
+            <label for="enrolled-course2">CS 316 Section5 M/W 3:10pm-4:25pm</label>
+            <input type="checkbox" id="enrolled-course2" name="cs316" value="cs316">
+            <br>
+            <label for="enrolled-course3">MATH 201 Section1 T/Th 1:45pm-2:55pm</label>
+            <input type="checkbox" id="enrolled-course3" name="math201" value="math201">
+            <br>
+            <label for="enrolled-course4">HIST 104 Section1 M/W 4:30pm-5:45pm</label>
+            <input type="checkbox" id="enrolled-course4" name="hist104" value="hist104" checked>
+            <br>
+            <input type="button" id="drop" name="drop" value="Drop Selected">
+        </form>
     </div>
     <div class="plannedContainer">
         <h2>Planned Courses</h2>
-        <label for="planned-course1">CS 343 Section7 M/W 6:30pm-7:45pm</label>
-        <input type="checkbox" id="planned-course1" name="cs343" value="cs343">
-        <br>
-        <label for="planned-course2">ANTH 102 Section11 M/W 10:45am-12:00pm</label>
-        <input type="checkbox" id="planned-course2" name="anth102" value="anth102">
-        <br>
-        <label for="planned-course3">MUSIC 1 Section16 F 1:00pm-4:55pm</label>
-        <input type="checkbox" id="planned-course3" name="music1" value="music1" checked>
-        <br>
-        <input type="button" id="remove" name="remove" value="Remove Selected">
-        <input type="button" id="swap" name="swap" value="Swap Selected">
-        <input type="button" id="enroll" name="enroll" value="Enroll Selected">
+        <form action="coursePlanner.html">
+            <label for="planned-course1">CS 343 Section7 M/W 6:30pm-7:45pm</label>
+            <input type="checkbox" id="planned-course1" name="cs343" value="cs343">
+            <br>
+            <label for="planned-course2">ANTH 102 Section11 M/W 10:45am-12:00pm</label>
+            <input type="checkbox" id="planned-course2" name="anth102" value="anth102">
+            <br>
+            <label for="planned-course3">MUSIC 1 Section16 F 1:00pm-4:55pm</label>
+            <input type="checkbox" id="planned-course3" name="music1" value="music1" checked>
+            <br>
+            <input type="button" id="remove" name="remove" value="Remove Selected">
+            <input type="button" id="swap" name="swap" value="Swap Selected">
+            <input type="button" id="enroll" name="enroll" value="Enroll Selected">
+            <br>
+            <input type="submit" id="go-to-planner" name="planner" value="Proceed to Planner">
+        </form>
     </div>
 </div>
 
