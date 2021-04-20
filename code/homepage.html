@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="styles/navbar-styles.css">
-    <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/homepage-styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="styles/navbar-styles.css">
+  <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/homepage-styles.css">
 </head>
 <body>
-<!-- Nav bar-->
-<header>
+  <!-- Nav bar-->
+  <header>
     <div class="navbar">
-        <a href="homepage.html"><img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto"></a>
-        <nav class="navbar-container">
-            <ul class="nav-links">
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="course-search.html">Course Search</a></li>
-                <li>
-                    <a href="course-planner.html">My Courses
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <div class="nav-link-dropdown-content">
-                        <a href="course-planner.html">Course Planner</a>
-                        <a href="course-enrollment.html">Course Enrollment</a>
-                        <a href="manage-courses.html">Manage Courses</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div class="profile-dropdown">
-            <button class="nav-btn">Daniel Rodriguez
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="profile-dropdown-content">
-                <a href="homepage.html">Profile</a>
-                <a href="#">Edit Profile</a>
-                <a href="login.html">Logout</a>
+      <a href="homepage.html"><img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto"></a>
+      <nav class="navbar-container">
+        <ul class="nav-links">
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="course-search.html">Course Search</a></li>
+          <li>
+            <a href="course-planner.html">My Courses
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="nav-link-dropdown-content">
+              <a href="course-planner.html">Course Planner</a>
+              <a href="course-enrollment.html">Course Enrollment</a>
+              <a href="manage-courses.html">Manage Courses</a>
             </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="profile-dropdown">
+        <button class="nav-btn">Daniel Rodriguez
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="profile-dropdown-content">
+          <a href="homepage.html">Profile</a>
+          <a href="#">Edit Profile</a>
+          <a href="login.html">Logout</a>
         </div>
+      </div>
     </div>
-</header>
-<div class="container">
-    <div class="dashboardProf">
+  </header>
+  <div class="grid-container">
+    <div class="dashboard-container">
+      <header class="welcome-header">
         <h1>Welcome back, Daniel Rodriguez!</h1>
-        <img src="images/user-profile.jpg" alt="User Profile Picture" width="150px" height="auto">
+      </header>
+      <img src="images/user-profile.jpg" alt="User Profile Picture" width="150px" height="auto">
+      <div class="dash-content-container">
         <h3>Email:</h3>
         <p>daniel.rodriguez74@qmail.cuny.edu</p>
         <h3>ID:</h3>
         <p>1234 5678</p>
         <h3>Major:</h3>
         <p>Computer Science, B.S</p>
+      </div>
+
+
     </div>
-    <div class="extraInfo">
-        <h3>Announcements</h3>
+    <div class="extra-info-container">
+      <header class="announcements-header">
+        <h1>Announcements</h1z>
+        </header>
+
         <p>You have until May 22nd, 2021 to apply for on campus parking permits for Fall 2021 - Summer 2022.</p>
         <h3>Holds</h3>
         <p>No holds.</p>
         <h3>Enrollment Date</h3>
         <p>2021 Fall Term Regular Academic Session on April 8, 2021, 8:00am.</p>
-    </div>
+      </div>
 
-</div>
-<!--   Footer     -->
-<footer>
-    <span class="text-white">&copy; QCFirst 2021</span>
-</footer>
-</body>
-</html>
+    </div>
+    <!--   Footer     -->
+    <footer>
+      <span class="text-white">&copy; QCFirst 2021</span>
+    </footer>
+  </body>
+  </html>
