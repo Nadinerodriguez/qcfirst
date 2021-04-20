@@ -108,7 +108,7 @@ input.checkbox {
     justify-content: space-evenly;
 }
 
-.create-course-container { 
+.create-course-container {
     grid-area: 1 / 6 / 5 / 13;
     background-color: white;
     border: 1px solid black;
@@ -183,7 +183,7 @@ footer {
     .enrollment-container {
         grid-area: 1 / 1 / 4 / 9;
     }
-    .create-course-container { 
+    .create-course-container {
         grid-area: 4 / 1 / 7 / 9;
     }
 }
@@ -199,7 +199,7 @@ footer {
     .enrollment-container {
         grid-area: 1 / 1 / 4 / 5;
     }
-    .create-course-container { 
+    .create-course-container {
         grid-area: 4 / 1 / 7 / 5;
     }
 }
