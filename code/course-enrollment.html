@@ -51,42 +51,65 @@
             <option value="fall2021">Fall 2021</option>
         </select>
     </form>
-    <div class="enrollmentContainer">
-        <h2>Enrolled Courses</h2>
-        <form action="coursePlanner.html">
-            <label for="enrolled-course1">CS 320 Section1 M/W 1:45pm-2:55pm</label>
-            <input type="checkbox" id="enrolled-course1" name="cs320" value="cs320">
-            <br>
-            <label for="enrolled-course2">CS 316 Section5 M/W 3:10pm-4:25pm</label>
-            <input type="checkbox" id="enrolled-course2" name="cs316" value="cs316">
-            <br>
-            <label for="enrolled-course3">MATH 201 Section1 T/Th 1:45pm-2:55pm</label>
-            <input type="checkbox" id="enrolled-course3" name="math201" value="math201">
-            <br>
-            <label for="enrolled-course4">HIST 104 Section1 M/W 4:30pm-5:45pm</label>
-            <input type="checkbox" id="enrolled-course4" name="hist104" value="hist104" checked>
-            <br>
-            <input type="button" id="drop" name="drop" value="Drop Selected">
-        </form>
-    </div>
-    <div class="plannedContainer">
-        <h2>Planned Courses</h2>
-        <form action="coursePlanner.html">
-            <label for="planned-course1">CS 343 Section7 M/W 6:30pm-7:45pm</label>
-            <input type="checkbox" id="planned-course1" name="cs343" value="cs343">
-            <br>
-            <label for="planned-course2">ANTH 102 Section11 M/W 10:45am-12:00pm</label>
-            <input type="checkbox" id="planned-course2" name="anth102" value="anth102">
-            <br>
-            <label for="planned-course3">MUSIC 1 Section16 F 1:00pm-4:55pm</label>
-            <input type="checkbox" id="planned-course3" name="music1" value="music1" checked>
-            <br>
-            <input type="button" id="remove" name="remove" value="Remove Selected">
-            <input type="button" id="swap" name="swap" value="Swap Selected">
-            <input type="button" id="enroll" name="enroll" value="Enroll Selected">
-            <br>
-            <input type="submit" id="go-to-planner" name="planner" value="Proceed to Planner">
-        </form>
+    <div class="grid-container">
+        <div class="enrollment-container">
+            <header class="enrolled-courses-header">
+                <h2>Enrolled Courses</h2>
+            </header>
+            <div class="entries-container">
+                <section class="course-entry">
+                    <button class="btn status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="enrolled-cs320">CS 320 Section 1 M/W 1:45pm-2:55pm</label>
+                    <input class="checkbox" type="checkbox" id="enrolled-cs320" name="enrolled-cs320" value="enrolled-cs320">
+                </section>
+                <section class="course-entry">
+                    <button class="btn status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="enrolled-cs316">CS 316 Section 5 M/W 3:10pm-4:25pm</label>
+                    <input class="checkbox" type="checkbox" id="enrolled-cs316" name="enrolled-cs316" value="enrolled-cs316" checked>
+                </section>
+                <section class="course-entry">
+                    <button class="btn status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="enrolled-math201">MATH 201 Section 1 T/Th 1:45pm-2:55pm</label>
+                    <input class="checkbox" type="checkbox" id="enrolled-math201" name="enrolled-math201" value="enrolled-math201">
+                </section>
+                <section class="course-entry">
+                    <button class="btn status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="enrolled-hist104">HIST 104 Section 1 M/W 4:30pm-5:45pm</label>
+                    <input class="checkbox" type="checkbox" id="enrolled-hist104" name="enrolled-hist104" value="enrolled-hist104">
+                </section>
+            </div>
+            <div class="btn-container">
+                <button class="btn drop-btn" type="button" id="drop-selected-btn" name="drop-selected-btn" value="Drop Selected" onclick="location.href='course-enrollment.html'">Drop Selected</button>
+            </div>
+        </div>
+        <div class="planned-container">
+            <header class="planned-courses-header">
+                <h2>Planned Courses</h2>
+            </header>
+            <div class="entries-container">
+                <section class="course-entry">
+                    <button class="btn status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="planned-cs343">CS 343 Section 7 M/W 6:30pm-7:45pm</label>
+                    <input class="checkbox" type="checkbox" id="planned-cs343" name="planned-cs343" value="planned-cs343">
+                </section>
+                <section class="course-entry">
+                    <button class="btn status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="planned-anth102">ANTH 102 Section 11 M/W 10:45am-12:00pm</label>
+                    <input class="checkbox" type="checkbox" id="planned-anth102" name="planned-anth102" value="planned-anth102" checked>
+                </section>
+                <section class="course-entry">
+                    <button class="btn status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="planned-music1">MUSIC 1 Section 16 F 1:00pm-4:55pm</label>
+                    <input class="checkbox" type="checkbox" id="planned-music1" name="planned-music1" value="planned-music1">
+                </section>
+            </div>
+            <div class="btn-container">
+                <button class="btn remove-btn" type="button" id="remove-selected-btn" name="remove-selected-btn" value="Remove Selected" onclick="location.href='course-enrollment.html'">Remove Selected</button>
+                <button class="btn swap-btn" type="button" id="swap-selected-btn" name="swap-selected-btn" value="Swap Selected" onclick="location.href='course-enrollment.html'">Swap Selected</button>
+                <button class="btn enroll-btn" type="button" id="enroll-selected-btn" name="enroll-selected-btn" value="Enroll Selected" onclick="location.href='course-enrollment.html'">Enroll Selected</button>
+                <button class="btn proceed-btn" type="button" id="proceed-planner-btn" name="proceed-planner-btn" value="Proceed to Planner" onclick="location.href='course-planner.html'">Proceed to Planner</button>
+            </div>
+        </div>
     </div>
 </div>
 <!--   Footer     -->

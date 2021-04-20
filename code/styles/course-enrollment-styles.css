@@ -1,3 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap%27');
+
+/* CSS Variables */
+:root {
+    --light: #ffffff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --QCRed: #DB2525;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f2f2f2;
+    margin: 30px 50px;
+    line-height: 1.4;
+}
+
+button {
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 15px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+select  {
+    border-color: rgb(104, 104, 104);
+    border-radius: 15px;
+    color: rgb(104, 104, 104);
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+input.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+
+.btn {
+    background-color: rgb(219, 37, 37, 1);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: rgb(219, 37, 37, 0.9);
+}
+
+.status-btn {
+    background-color: rgb(76, 194, 52);
+    font-size: 12px;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+.remove-btn {
+    background-color: rgb(104, 104, 104);
+}
+
+.remove-btn:hover {
+    background-color: rgb(104, 104, 104, 0.9);
+}
+
+.proceed-btn {
+    background-color: rgb(207, 61, 61);
+}
+
+.proceed-btn:hover {
+    background-color: rgb(207, 61, 61, 0.9); 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.enrollment-container {
+    grid-area: 1 / 1 / 5/ 7;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 10% 70% 20%;
+    padding: 10px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.planned-container {
+    grid-area: 1 / 7 / 5 / 13;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 10% 70% 20%;
+    padding: 10px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.enrolled-courses-header, .planned-courses-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.entries-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.course-entry {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+    margin: 5px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.course-entry:hover {
+    background-color: var(--QCRed);
+    color: #edf0f1;
+}
+
 footer {
     position: fixed;
     left: 0;
@@ -6,4 +156,36 @@ footer {
     background-color: rgb(219, 37, 37, 1);
     color: white;
     text-align: center;
+}
+
+@media only screen and (max-width: 1023px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    .enrollment-container {
+        grid-area: 1 / 1 / 4 / 9;
+    }
+    .planned-container { 
+        grid-area: 4 / 1 / 7 / 9;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    .enrollment-container {
+        grid-area: 1 / 1 / 4 / 5;
+    }
+    .planned-container { 
+        grid-area: 4 / 1 / 7 / 5;
+    }
 }
