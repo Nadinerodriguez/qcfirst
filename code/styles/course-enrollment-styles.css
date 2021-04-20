@@ -138,9 +138,11 @@ input.checkbox {
 
 .btn-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: space-evenly;
+    padding: 15px 15px;
+    margin: 15px 15px;
 }
 
 .course-entry:hover {
