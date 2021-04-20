@@ -33,18 +33,35 @@ body {
     border-radius: 15px;
     display: grid;
     grid-template-rows: auto;
-    padding: 10px 30px;
+    padding: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.welcome-header, .announcements-header {
+.welcome-header, .announcements-container > p, .dash-content-container > p, .profile-pic-section {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dash-content-container {
-    display: flex;
+.email-section, .id-section, .major-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 50px;
+}
+
+.announcements-section, .holds-section, .enroll-date-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: rgb(237, 234, 230);
+  border-radius: 50px;
+}
+
+.dash-content-container, .announcements-container {
+    display: inline-block;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
@@ -57,7 +74,7 @@ body {
   border-radius: 15px;
   display: grid;
   grid-template-rows: auto;
-  padding: 10px 30px;
+  padding: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
