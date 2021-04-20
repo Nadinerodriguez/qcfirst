@@ -14,6 +14,7 @@ html {
     font-size: 16px;
     text-decoration: none;
 }
+
 body {
     background-color: #f2f2f2;
     margin: 30px 50px;
@@ -29,9 +30,32 @@ button {
     padding: 10px 15px;
 }
 
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+select, #courseCap, #startTimeText, #endTimeText, #courseDescript  {
+    border-color: rgb(104, 104, 104);
+    border-radius: 5px;
+    color: rgb(104, 104, 104);
+    padding: 10px 10px;
+}
+
+input.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+
 .btn {
     background-color: rgb(219, 37, 37, 1);
     font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: rgb(219, 37, 37, 0.9);
 }
 
 .grid-container {
@@ -39,7 +63,7 @@ button {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 20px;
-    grid-row-gap: 0px;
+    grid-row-gap: 20px;
 }
 
 .enrollment-container {
@@ -98,15 +122,19 @@ button {
 .course-form {
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
 .course-form-dropdown-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
 }
 
 .course-entry:hover {
@@ -114,10 +142,24 @@ button {
     color: #edf0f1;
 }
 
-.btn:hover {
-    background-color: rgb(219, 37, 37, 0.9);
+.course-date-time-container, .course-description-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
 }
 
+.date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.time-container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
 
 
 footer {
@@ -128,4 +170,36 @@ footer {
     background-color: rgb(219, 37, 37, 1);
     color: white;
     text-align: center;
+}
+
+@media only screen and (max-width: 1023px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    .enrollment-container {
+        grid-area: 1 / 1 / 4 / 9;
+    }
+    .create-course-container { 
+        grid-area: 4 / 1 / 7 / 9;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    .enrollment-container {
+        grid-area: 1 / 1 / 4 / 5;
+    }
+    .create-course-container { 
+        grid-area: 4 / 1 / 7 / 5;
+    }
 }
