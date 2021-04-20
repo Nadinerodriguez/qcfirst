@@ -1,3 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap%27');
+
+/* CSS Variables */
+:root {
+    --light: #ffffff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --QCRed: #DB2525;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+body {
+    background-color: #f2f2f2;
+    margin: 30px 50px;
+    line-height: 1.4;
+}
+
+button {
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 15px;
+}
+
+.btn {
+    background-color: rgb(219, 37, 37, 1);
+    font-size: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+}
+
+.enrollment-container {
+    grid-area: 1 / 1 / 5 / 6;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 10% 70% 20%;
+    padding: 10px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.my-courses-header, .create-course-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.entries-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.course-entry {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+    margin: 5px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.create-course-container { 
+    grid-area: 1 / 6 / 5 / 13;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    padding: 10px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.course-form {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.course-form-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.course-entry:hover {
+    background-color: var(--QCRed);
+    color: #edf0f1;
+}
+
+.btn:hover {
+    background-color: rgb(219, 37, 37, 0.9);
+}
+
+
+
 footer {
     position: fixed;
     left: 0;
