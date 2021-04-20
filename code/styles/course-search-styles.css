@@ -1,3 +1,95 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f2f2f2;
+    margin: 30px 50px;
+    line-height: 1.4;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.search-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+/* .search-container {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    padding: 10px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+} */
+
+.searchFilter, .advancedSearchFilter, .card {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: grid;
+  padding: 10px 30px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.course-search-form, .advanced-search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.course-form-dropdown-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.course-date-time-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.cards-results-container {
+    grid-area: auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: grid;
+    padding: 10px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.card > h4 {
+  color: red;
+}
+
 button {
     border: none;
     border-radius: 5px;
