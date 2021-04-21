@@ -83,6 +83,7 @@ input.checkbox {
     grid-template-rows: 10% 70% 20%;
     padding: 10px 30px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 300px;
 }
 
 .planned-container {

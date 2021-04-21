@@ -75,6 +75,7 @@ input.checkbox {
     grid-template-rows: 10% 70% 20%;
     padding: 10px 30px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 300px;
 }
 
 .my-courses-header, .create-course-header {
@@ -117,6 +118,7 @@ input.checkbox {
     grid-template-rows: 10% 90%;
     padding: 10px 30px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 300px;
 }
 
 .course-form {
@@ -146,6 +148,10 @@ input.checkbox {
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
+}
+
+.course-description-container > #courseDesc {
+    width: 80%;
 }
 
 .date-container {

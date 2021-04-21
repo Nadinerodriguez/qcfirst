@@ -36,12 +36,22 @@ body {
     padding: 1em;
     margin-bottom: 15px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 300px;
 }
 
 .welcome-header, .announcements-container > p, .dash-content-container > p, .profile-pic-section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.greeting-user {
+    word-wrap: break-word;
+}
+.user-name {
+    color:#DB2525;
+    display: inline-block;
 }
 
 .email-section, .id-section, .major-section {
@@ -115,6 +125,7 @@ body {
   grid-template-rows: auto;
   padding: 1em;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 300px;
 }
 
 .logo {
@@ -125,7 +136,7 @@ body {
 img.user-picture {
     width: 150px;
     height: auto;
-    border-radius: 1000px;
+    border-radius: 30px;
     padding: 15px;
 }
 
@@ -138,3 +149,9 @@ footer {
     color: white;
     text-align: center;
 }
+
+/* @media only screen and (max-width: 499) {
+    img.user-picture {
+        width: 100%;
+    }
+} */
