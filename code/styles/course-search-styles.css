@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap%27');
+
+/* CSS Variables */
+:root {
+    --light: #ffffff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --QCRed: #DB2525;
+}
+
 html {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
@@ -12,34 +21,76 @@ body {
     line-height: 1.4;
 }
 
-/* .grid-container {
+.basic-search {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+select, #startTimeText, #endTimeText, #courseNum, #instructorName  {
+    border-color: rgb(104, 104, 104);
+    border-radius: 5px;
+    color: rgb(104, 104, 104);
+    cursor: pointer;
+    padding: 10px 10px;
+}
+
+#search, #term {
+    border-radius: 10px;
+    color: rgb(104, 104, 104);
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+input.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.search-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 20px;
+    grid-template-columns: 40% 60%;
     grid-row-gap: 20px;
-} */
+    grid-column-gap: 20px;
+    padding: 15px 5px;
+}
 
 .searchFilter, .advancedSearchFilter {
   background-color: white;
   border: 1px solid black;
   border-radius: 15px;
   display: grid;
+  grid-template-rows: 10% 80% 10%;
   padding: 10px 30px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-.card {
-  border: 1px solid black;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  border-radius: 15px;
-  padding: 1em;
 
+.status-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 15px 15px;
+    margin: 5px;
 }
 
-.course-search-form, .advanced-search-form {
+.status-filter:hover {
+    background-color: #34de28;
+}
+
+.course-search-form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.advanced-search-form {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
 }
 
@@ -73,17 +124,33 @@ body {
     border: 1px solid black;
     border-radius: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 10px 30px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-} */
+}
+
+.class-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.semester-year {
+    color: rgb(104, 104, 104);
+}
+
+.card-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
 .card {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 10px;
-  padding: 20px 100px;
+    border: 1px solid black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 20px 15px;
 }
 
 .card > h4 {
@@ -100,17 +167,17 @@ button {
 
 .status-btn {
     background-color: #34de28;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .add-btn {
     background-color: #f25757;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .enroll-btn {
     background-color: rgb(219, 37, 37, 1);
-    font-size: 12px;
+    font-size: 14px;
 }
 
 footer {
@@ -121,4 +188,14 @@ footer {
     background-color: rgb(219, 37, 37, 1);
     color: white;
     text-align: center;
+}
+
+@media only screen and (max-width: 1023px) {
+    .search-container {
+        display: flex;
+        flex-wrap: wrap;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        padding: 15px 5px;
+    }
 }
