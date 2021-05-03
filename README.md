@@ -1,5 +1,23 @@
 # qcfirst
 
+## Link to our Website
+<a href="https://nadinebrodriguez.com/qcfirst/">QCFirst</a>
+
+## Name of Contributors
+- Daniel Rodriguez (Github: Danielbrod01)
+- Nadine Rodriguez (Github: Nadinerodriguez)
+
+## Contributions 
+- Daniel Rodriguez
+HTML: ...
+CSS: ...
+- Nadine Rodriguez
+HTML: ...
+CSS: ...
+
+## List of features of our app 
+## A link to which web page each feature can be found on
+
 ## Visual Designs using Figma
 **Sign Up/Log In Page**
 - Students and Faculties can sign up using their QCfirst email addresses.
@@ -57,3 +75,5 @@
 <img src="/VisualDesigns/desktop/manage-course(desktop).png" /><br />
 <img src="/VisualDesigns/tablet/manage-course(tablet).png" /><br />
 <img src="/VisualDesigns/mobile/manage-course(mobile).png" /><br />
+
+## A summary of any differences between our visual designs and final outcome
