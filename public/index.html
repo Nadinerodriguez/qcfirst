@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up - QCFirst</title>
+    <link rel="stylesheet" href="styles/signup-styles.css">
+</head>
+<body>
+<div class="bg-image"></div>
+<div class="sign-up-container">
+    <img class="logo" src="images/qclogo.png" alt="logo">
+    <div class="sign-up-box">
+        <h1 class="sign-up-text">QCFirst Sign Up</h1>
+        <form action="index.html" class="sign-up-form">
+            <!--Sign up fields-->
+            <label for="first-name">First Name</label><br>
+            <input class="input-box" type="text" id="first-name" name="first-name" size="35" required><br>
+            <label for="last-name">Last Name</label><br>
+            <input class="input-box" type="text" id="last-name" name="last-name" size="35" required><br>
+
+            <label for="user-email">User Email</label><br>
+            <input class="input-box" type="email" id="user-email" name="user-email" size="35" required><br>
+            <label for="confirm-user-email">Confirm User Email</label><br>
+            <input class="input-box" type="email" id="confirm-user-email" name="confirm-user-email" size="35" required><br>
+
+            <label for="user-password">Password</label><br>
+            <input class="input-box" type="password" id="user-password" name="user-password" size="35" required><br>
+            <label for="confirm-user-password">Confirm Password</label><br>
+            <input class="input-box" type="password" id="confirm-user-password" name="confirm-user-password" size="35" required><br>
+
+            <!--Register as-->
+            <p>Register as:</p>
+            <input class="radio-btn" type="radio" id="student-radio" name="account-type" value="student" required>
+            <label class="radio-btn" for="student-radio">Student</label>
+            <input class="radio-btn" type="radio" id="faculty-radio" name="account-type" value="faculty">
+            <label class="radio-btn" for="faculty-Radio">Faculty</label><br>
+            <!--Submit buttons-->
+            <button class="sign-up-btn" id="sign-up-btn" type="submit" value="Submit">Sign Up</button>
+            <p class="returning-user-text">Returning User?</p>
+            <button class="login-btn" type="button" onclick="location.href='index.html'">Log In</button>
+        </form>
+    </div>
+</div>
+<!--   Footer     -->
+<footer>
+    <span class="text-white">&copy; QCFirst 2021</span>
+</footer>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBjJOgWYkBrHpHf88Mkga_qMFng8jK_YsI",
+        authDomain: "qcfirst-84ac7.firebaseapp.com",
+        projectId: "qcfirst-84ac7",
+        storageBucket: "qcfirst-84ac7.appspot.com",
+        messagingSenderId: "670727540571",
+        appId: "1:670727540571:web:eadc35ba0e2af2a73b547e"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    document.getElementById('sign-up-btn').addEventListener('click', signUpUser)
+
+    function signUpUser() {
+        let email = document.getElementById('user-email').value
+        let pass = document.getElementById('user-password').value
+
+        firebase.auth().createUserWithEmailAndPassword(email, pass).then(()=> {
+            alert('User Acc Created')
+        }).catch(e=> console.log(e))
+
+        console.log(email)
+        console.log(pass)
+    }
+</script>
+
+</body>
+</html>
