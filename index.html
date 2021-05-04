@@ -12,7 +12,7 @@
             <img class="logo" src="images/qclogo.png" alt="logo">
             <div class="login-box">
                 <h1 class="login-text">QCFirst Login</h1>
-                <form action="code/homepage.html" class="login-form">
+                <form action="/auth" class="login-form" method="POST">
                     <!--Login fields-->
                     <label for="user-email">User Email</label><br>
                     <input class="input-box" type="email" id="user-email" name="user-email" size="35" required><br>
@@ -26,8 +26,10 @@
                     <label class="radio-btn" for="faculty-Radio">Faculty</label><br>
                     <!--Submit buttons-->
                     <button class="login-btn" type="submit" value="Submit">Log In</button>
-                    <p class="new-user-text">New User?</p>
-                    <button class="sign-up-btn" type="button" onclick="location.href='signup.html'">Sign Up</button>
+                </form>
+                <form action="/signup" method="GET">
+                    <label for="sign-up-btn" class="new-user-text">New User?</label>
+                    <button id="sign-up-btn" class="sign-up-btn" type="submit">Sign Up</button>
                 </form>
             </div>
         </div>

@@ -1,0 +1,25 @@
+{
+  "name": "qcfirst",
+  "version": "1.0.0",
+  "description": "## Link to our Website <a href=\"https://nadinebrodriguez.com/qcfirst/\">QCFirst</a>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nadinerodriguez/qcfirst.git"
+  },
+  "author": "Daniel Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nadinerodriguez/qcfirst/issues"
+  },
+  "homepage": "https://github.com/Nadinerodriguez/qcfirst#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1"
+  }
+}

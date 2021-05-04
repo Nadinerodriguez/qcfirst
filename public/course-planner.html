@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Courses Planner</title>
+    <link rel="stylesheet" href="styles/navbar-styles.css">
+    <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/course-planner-styles.css">
+</head>
+<body>
+<!-- Nav bar-->
+<header>
+    <div class="navbar">
+        <a href="homepage.html"><img class="logo" src="images/qclogo.png" alt="logo" width="250" height="auto"></a>
+        <nav class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="course-search.html">Course Search</a></li>
+                <li>
+                    <a href="course-planner.html">My Courses
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="nav-link-dropdown-content">
+                        <a href="course-planner.html">Course Planner</a>
+                        <a href="course-enrollment.html">Course Enrollment</a>
+                        <a href="manage-courses.html">Manage Courses</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-dropdown">
+            <button class="nav-btn">Daniel Rodriguez
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="profile-dropdown-content">
+                <a href="homepage.html">Profile</a>
+                <a href="#">Edit Profile</a>
+                <a href="/login">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <h1>Course Planner</h1>
+    <form>
+        <label for="term">Term:</label>
+        <select name="term" id="term">
+            <option value="spring2021">Spring 2021</option>
+            <option value="summer2021">Summer 2021</option>
+            <option value="fall2021">Fall 2021</option>
+        </select>
+    </form>
+    <div class="grid-container">
+        <div class="enrollment-container">
+            <header class="enrolled-courses-header">
+                <h2>Enrolled Courses</h2>
+            </header>
+            <div class="entries-container">
+                <section class="course-entry">
+                    <button class="status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="enrolled-cs320">CS 320 Section 1 M/W 1:45pm-2:55pm</label>
+                    <input class="checkbox" type="checkbox" id="enrolled-cs320" name="enrolled-cs320" value="enrolled-cs320">
+                </section>
+                <section class="course-entry">
+                    <button class="status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="enrolled-cs316">CS 316 Section 5 M/W 3:10pm-4:25pm</label>
+                    <input class="checkbox" type="checkbox" id="enrolled-cs316" name="enrolled-cs316" value="enrolled-cs316" checked>
+                </section>
+                <section class="course-entry">
+                    <button class="status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="enrolled-math201">MATH 201 Section 1 T/Th 1:45pm-2:55pm</label>
+                    <input class="checkbox" type="checkbox" id="enrolled-math201" name="enrolled-math201" value="enrolled-math201">
+                </section>
+                <section class="course-entry">
+                    <button class="status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="enrolled-hist104">HIST 104 Section 1 M/W 4:30pm-5:45pm</label>
+                    <input class="checkbox" type="checkbox" id="enrolled-hist104" name="enrolled-hist104" value="enrolled-hist104">
+                </section>
+            </div>
+            <div class="btn-container">
+                <button class="btn manage-btn" type="button" id="manage-enrollment-btn" name="manage-enrollment-btn" value="Manage Enrolled Courses" onclick="location.href='course-enrollment.html'">Manage Enrolled Courses</button>
+            </div>
+        </div>
+        <div class="planned-container">
+            <header class="planned-courses-header">
+                <h2>Planned Courses</h2>
+            </header>
+            <div class="entries-container">
+                <section class="course-entry">
+                    <button class="status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="planned-cs343">CS 343 Section 7 M/W 6:30pm-7:45pm</label>
+                    <input class="checkbox" type="checkbox" id="planned-cs343" name="planned-cs343" value="planned-cs343">
+                </section>
+                <section class="course-entry">
+                    <button class="status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="planned-anth102">ANTH 102 Section 11 M/W 10:45am-12:00pm</label>
+                    <input class="checkbox" type="checkbox" id="planned-anth102" name="planned-anth102" value="planned-anth102" checked>
+                </section>
+                <section class="course-entry">
+                    <button class="status-btn" type="button" id="class-status-btn" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                    <label for="planned-music1">MUSIC 1 Section 16 F 1:00pm-4:55pm</label>
+                    <input class="checkbox" type="checkbox" id="planned-music1" name="planned-music1" value="planned-music1">
+                </section>
+            </div>
+            <div class="btn-container">
+                <button class="btn proceed-btn" type="button" id="proceed-enrollment-btn" name="proceed-enrollment-btn" value="Proceed to Enrollment" onclick="location.href='course-enrollment.html'">Proceed to Enrollment</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--   Footer     -->
+<footer>
+    <span class="text-white">&copy; QCFirst 2021</span>
+</footer>
+
+</body>
+</html>
