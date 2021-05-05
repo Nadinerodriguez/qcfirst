@@ -111,8 +111,7 @@ app.post('/register', (req,res) => {
 						});
 					} else {
 						//insert into faculty table
-						connection.query('INSERT INTO faculty (acc_ID, first_name, last_name)' +
-							' VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
+						connection.query('INSERT INTO faculty (acc_ID, first_name, last_name) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
 							if (error) throw error;
 							console.log("1 record inserted into faculty");
 							res.end();
@@ -137,26 +136,26 @@ app.get('/login', (req,res) => {
 	console.log("login session is " + req.session.loggedin);
 	req.session.loggedin = false;
 	console.log("login session is " + req.session.loggedin);
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.redirect('/index.html');
 });
 
 app.get('/signup', (req,res) => {
 	console.log("login session is " + req.session.loggedin);
 	req.session.loggedin = false;
 	console.log("login session is " + req.session.loggedin);
-    res.sendFile(path.join(__dirname + '/signup.html'));
+    res.redirect('/signup.html');
 });
 
 app.get('/incorrect-user', (req,res) => {
-	res.sendFile(path.join(__dirname + '/incorrect-user.html'));
+	res.redirect('/incorrect-user.html');
 });
 
 app.get('/email-exists', (req,res) => {
-	res.sendFile(path.join(__dirname + '/email-exists.html'));
+	res.redirect('/email-exists.html');
 });
 
 app.get('/mismatched-email-password', (req,res) => {
-	res.sendFile(path.join(__dirname + '/mismatched-email-password.html'));
+	res.redirect('/mismatched-email-password.html');
 });
 
 app.get('/home', (req,res) => {
@@ -225,4 +224,6 @@ app.get('/manage-courses', (req,res) => {
 });
 
 
-app.listen(3000);
+app.listen(3000, () => {
+	console.log("Server is up");
+});
