@@ -102,12 +102,22 @@ app.post('/register', (req,res) => {
 						console.log("1 record inserted into accounts");		
 						res.end();
 					});
-					//insert into students table
-					connection.query('INSERT INTO students (user_ID, first_name, last_name) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
-						if (error) throw error;
-						console.log("1 record inserted into students");		
-						res.end();
-					});
+					if (accountType === 'student') {
+						//insert into students table
+						connection.query('INSERT INTO students (user_ID, first_name, last_name) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
+							if (error) throw error;
+							console.log("1 record inserted into students");
+							res.end();
+						});
+					} else {
+						//insert into faculty table
+						connection.query('INSERT INTO faculty (acc_ID, first_name, last_name)' +
+							' VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
+							if (error) throw error;
+							console.log("1 record inserted into faculty");
+							res.end();
+						});
+					}
 					res.redirect('/login');
 				} else {
 					console.log("Email/Passwords don't match!");
