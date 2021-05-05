@@ -4,13 +4,35 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var connection = mysql.createConnection({
-    host     : 'remotemysql.com',
+var db_config = {
+	host     : 'remotemysql.com',
 	port	 : '3306',
     user     : 'Vzy22Pgnp5',
     password : 'gkM63NE4Og',
     database : 'Vzy22Pgnp5'
-});
+}
+
+var connection;
+function handleReconnection() {
+
+	connection = mysql.createConnection(db_config);
+	connection.connect((error) => {            
+		if(error) {                                     
+		  console.log('Error experienced while connecting to database:', error);
+		  setTimeout(handleReconnection, 2000);
+		}                                     
+	});
+
+	connection.on('error', (error) => {
+		console.log('Database error: ', error);
+		if(error.code === 'PROTOCOL_CONNECTION_LOST') { 
+		  handleReconnection();                         
+		} else {                                      
+		  throw error;                                  
+		}
+	  });
+};
+handleReconnection();
 
 var app = express();
 
@@ -34,7 +56,7 @@ app.post('/auth', (req,res) => {
 	var userPassword = req.body['user-password'];
 	var accountType = req.body['account-type'];
 	if (userEmail && userPassword && accountType) {
-		connection.query('SELECT * FROM accounts WHERE user_email = ? AND user_password = ? AND user_type = ?', [userEmail, userPassword, accountType], function(error, results, fields) {
+		connection.query('SELECT * FROM accounts WHERE user_email = ? AND user_password = ? AND user_type = ?', [userEmail, userPassword, accountType], (error, results, fields) => {
 			if (results.length > 0) {
 				req.session.loggedin = true;
 				req.session.userEmail = userEmail;
@@ -67,7 +89,7 @@ app.post('/register', (req,res) => {
 
 	//check if user email already exists in the database
 	if (userEmail) {
-		connection.query('SELECT * FROM accounts WHERE user_email = ?', userEmail, function(error, results, fields) {
+		connection.query('SELECT * FROM accounts WHERE user_email = ?', userEmail, (error, results, fields) => {
 			if (results.length > 0) {
 				console.log("Email already exists!");
 				res.redirect('/signup');
@@ -75,13 +97,13 @@ app.post('/register', (req,res) => {
 				if (userEmail === confirmUserEmail && userPassword === confirmUserPassword) {
 
 					//insert into accounts table
-					connection.query('INSERT INTO accounts (user_email, user_password, user_type) VALUES ( ?, ?, ?)', [userEmail, userPassword, accountType], function(error, results, fields) {
+					connection.query('INSERT INTO accounts (user_email, user_password, user_type) VALUES ( ?, ?, ?)', [userEmail, userPassword, accountType], (error, results, fields) => {
 						if (error) throw error;
 						console.log("1 record inserted into accounts");		
 						res.end();
 					});
 					//insert into students table
-					connection.query('INSERT INTO students (user_ID, first_name, last_name) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], function(error, results, fields) {
+					connection.query('INSERT INTO students (user_ID, first_name, last_name) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
 						if (error) throw error;
 						console.log("1 record inserted into students");		
 						res.end();
