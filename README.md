@@ -1,7 +1,7 @@
 # qcfirst
 
 ## Link to our Website
-<p><a href="https://qcfirst.danielrodrigu21.repl.co/login?">Click Me! QCFirst</a> Or go to https://qcfirst.danielrodrigu21.repl.co/login?</p>
+<p><a href="https://qcfirst.danielrodrigu21.repl.co">Click Me! QCFirst</a> Or go to https://qcfirst.danielrodrigu21.repl.co</p>
 
 ## Name of Contributors
 - Daniel Rodriguez (Github: Danielbrod01)
