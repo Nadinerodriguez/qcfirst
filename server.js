@@ -92,7 +92,7 @@ app.post('/register', (req,res) => {
 		connection.query('SELECT * FROM accounts WHERE user_email = ?', userEmail, (error, results, fields) => {
 			if (results.length > 0) {
 				console.log("Email already exists!");
-				res.redirect('/signup');
+				res.redirect('/email-exists');
 			} else {
 				if (userEmail === confirmUserEmail && userPassword === confirmUserPassword) {
 
@@ -110,8 +110,8 @@ app.post('/register', (req,res) => {
 					});
 					res.redirect('/login');
 				} else {
-					console.log("Passwords don't match!");
-					res.redirect('/signup');
+					console.log("Email/Passwords don't match!");
+					res.redirect('/mismatched-email-password');
 				}
 			}		
 			res.end();
@@ -139,6 +139,14 @@ app.get('/signup', (req,res) => {
 
 app.get('/incorrect-user', (req,res) => {
 	res.sendFile(path.join(__dirname + '/incorrect-user.html'));
+});
+
+app.get('/email-exists', (req,res) => {
+	res.sendFile(path.join(__dirname + '/email-exists.html'));
+});
+
+app.get('/mismatched-email-password', (req,res) => {
+	res.sendFile(path.join(__dirname + '/mismatched-email-password.html'));
 });
 
 app.get('/home', (req,res) => {

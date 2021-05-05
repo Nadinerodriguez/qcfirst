@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Incorrect User/password</title>
+    <title>Incorrect User/Password/Type</title>
     <link rel="stylesheet" href="styles/login-styles.css">
 </head>
 <body>
@@ -11,10 +11,15 @@
 <div class="login-container">
     <img class="logo" src="images/qclogo.png" alt="logo">
     <div class="login-box">
-        <h1 class="login-text">Incorrect Username, Password and/or Account Type</h1>
+        <h1 class="login-text">Incorrect User Email, Password and/or User Type.</h1>
         <form action="/login" class="login-form" method="GET">
             <!--Submit buttons-->
             <button class="login-btn" type="submit" value="Submit">Try Again!</button>
+        </form>
+        <form action="/signup" class="login-form" method="GET">
+            <label for="sign-up-btn" class="new-user-text">New User?</label>
+            <!--Submit buttons-->
+            <button id="sign-up-btn" class="sign-up-btn" type="submit" value="Submit">Try Again!</button>
         </form>
     </div>
 </div>
