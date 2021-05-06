@@ -117,7 +117,7 @@ app.post('/register', (req,res) => {
 							res.end();
 						});
 					}
-					res.redirect('/login');
+					res.redirect('/create-successful');
 				} else {
 					console.log("Email/Passwords don't match!");
 					res.redirect('/mismatched-email-password');
@@ -148,6 +148,10 @@ app.get('/signup', (req,res) => {
 
 app.get('/incorrect-user', (req,res) => {
 	res.redirect('/incorrect-user.html');
+});
+
+app.get('/create-successful', (req,res) => {
+	res.redirect('/create-successful.html');
 });
 
 app.get('/email-exists', (req,res) => {
