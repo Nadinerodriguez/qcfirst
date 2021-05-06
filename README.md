@@ -12,13 +12,13 @@ Daniel Rodriguez
 - Visual Design: Designed the sign up, login, homepage, and manage courses pages on Figma.
 - HTML: I wrote the navbar and the entire HTML code for the sign up, log in, and homepage pages.
 - CSS: I styled the sign up, login, course planner, course enrollement, and manage courses pages.
-- Back End: Researched on what best technologies to use for the backend such as Firebase, Node.js, Express.js, MySQL and MongoDB. I set up the various routings in the Node and Express server to serve all our web documents.
+- Back End: Researched on what best technologies to use for the backend such as Firebase, Node.js, Express.js, MySQL and MongoDB. I set up the various routings in the Node and Express server to serve all our web documents. Implemented a simple authentication router to check if the email already exists in the database before deciding whether to insert that new entry into the database. Implemented another authentication router to check if the email and password provided on the login form matches an entry in the database. Implemented a simple session to only allow those in logged in session to navigate around and use the application. Added a check to only allow faculty to access the 'manage courses' page
 
 Nadine Rodriguez
 - Visual Design: Designed the course search, course planner, and course enrollment pages on Figma.
-- HTML: I worked on the footer and the entire HTML code for the course search, course planner, course enrollment, and manage courses page.
+- HTML: I worked on the footer and the entire HTML code for the course search, course planner, course enrollment, and manage courses page. Fixed minor errors on all of the HTML pages.
 - CSS: I styled the navbar, footer, homepage and course search page.
-- Back End: Researched on what best technologies to use for the backend such as Firebase, Node.js, and Express.js. Tried using Firebase's Authenthication for the Sign Up and Login pages but later decided with my partner that his solution was the best approach in the long run. I created the students and faculty table on MySQL.
+- Back End: Researched on what best technologies to use for the backend such as Firebase, Node.js, and Express.js. Tried using Firebase's Authenthication for the Sign Up and Login pages but later decided with my partner that his solution was the best approach in the long run. I set up the MySQL database and created the students and faculty tables. I also ran several test cases for our Sign In and Log In pages.
 
 ## List of features of our app 
 ## A link to which web page each feature can be found on
