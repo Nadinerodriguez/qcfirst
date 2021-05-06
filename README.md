@@ -12,7 +12,7 @@ Daniel Rodriguez
 - Visual Design: Designed the sign up, login, homepage, and manage courses pages on Figma.
 - HTML: I wrote the navbar and the entire HTML code for the sign up, log in, and homepage pages.
 - CSS: I styled the sign up, login, course planner, course enrollement, and manage courses pages.
-- Back End: Researched on what best technologies to use for the backend such as Firebase, Node.js, Express.js, MySQL and MongoDB. I set up the various routhings in the Node and Express server to serve all our web documents.
+- Back End: Researched on what best technologies to use for the backend such as Firebase, Node.js, Express.js, MySQL and MongoDB. I set up the various routings in the Node and Express server to serve all our web documents.
 
 Nadine Rodriguez
 - Visual Design: Designed the course search, course planner, and course enrollment pages on Figma.
