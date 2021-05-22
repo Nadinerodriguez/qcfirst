@@ -206,6 +206,18 @@ app.get('/course-enrollment', (req,res) => {
 	res.end();
 });
 
+app.get('/admin', (req,res) => {
+	console.log("you are on admin");
+	console.log("login session is " + req.session.loggedin);
+
+	if (req.session.loggedin) {
+		res.redirect('/admin.html');
+	} else {
+		res.redirect('/login-error.html');
+	}
+	res.end();
+});
+
 app.get('/manage-courses', (req,res) => {
 	console.log("you are on course search");
 	console.log("login session is " + req.session.loggedin);

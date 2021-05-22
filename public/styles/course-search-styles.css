@@ -57,7 +57,7 @@ input.checkbox {
     margin-bottom: 20px;
 }
 
-.searchFilter, .advancedSearchFilter {
+.searchFilter {
   background-color: white;
   border: 1px solid black;
   border-radius: 15px;
@@ -89,11 +89,6 @@ input.checkbox {
     justify-content: flex-start;
 }
 
-.advanced-search-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
 
 .course-form-dropdown-container {
     display: flex;

@@ -28,6 +28,7 @@
               <a href="/manage-courses">Manage Courses</a>
             </div>
           </li>
+            <li><a href="/admin">Admin</a></li>
         </ul>
       </nav>
       <div class="profile-dropdown">
@@ -36,7 +37,6 @@
         </button>
         <div class="profile-dropdown-content">
           <a href="/home">Profile</a>
-          <a href="#">Edit Profile</a>
           <a href="/login">Logout</a>
         </div>
       </div>
@@ -93,98 +93,12 @@
                         <option value="undergrad">Undergraduate </option>
                     </select>
                 </div>
-                <div class="dropdown">
-                    <label for="requirement">Requirement Designation:</label>
-                    <select name="requirement" id="requirement">
-                        <option value="ce">Creative Expression</option>
-                        <option value="is">Individual and Society</option>
-                        <option value="sw">Scientific World</option>
-                        <option value="used">US Experience in its Diversity</option>
-                        <option value="wigi">World Issues & Global Issues</option>
-                        <option value="ec">English Composition</option>
-                        <option value="lps">Life and Physical Science</option>
-                        <option value="mqr">Mathematical & Quantitative Reasoning</option>
-                    </select>
-                </div>
               </div>
             </form>
             <div class="status-filter">
                 <label for="classStatus">Display Open Classes Only</label>
                 <input class="checkbox" type="checkbox" id="classStatus" name="classStatus" checked>
             </div>
-        </div>
-        <div class="advancedSearchFilter">
-            <header class="advanced-search-filter-header">
-                <h3>Advanced Class Search Filter</h3>
-            </header>
-            <form class="advanced-search-form" action="">
-              <div class="course-form-dropdown-container">
-                <div class="dropdown">
-                    <label for="modeOfIns">Mode of Instruction:</label>
-                    <select name="modeOfIns" id="modeOfIns">
-                        <option value="hybrid">Hybrid</option>
-                        <option value="inPerson">In-person</option>
-                        <option value="online">Online</option>
-                    </select>
-                </div>
-                <div class="dropdown">
-                    <label for="startTime">Start Time:</label>
-                    <select class="dropdown" name="startTime" id="startTime">
-                        <option value="between">Between</option>
-                        <option value="gt">Greater than</option>
-                        <option value="gte">Greater than or Equal to</option>
-                        <option value="exactly">Exactly</option>
-                        <option value="lt">Less than</option>
-                        <option value="lte">Less than or Equal to</option>
-                    </select>
-                </div>
-                <div class="dropdown">
-                  <label for="startTimeText">Time:</label>
-                  <input type="text" id="startTimeText" name="startTimeText" placeholder="1:40pm">
-                </div>
-                <div class="dropdown">
-                    <label for="endTime">End Time:</label>
-                    <select class="dropdown" name="endTime" id="endTime">
-                        <option value="between">Between</option>
-                        <option value="gt">Greater than</option>
-                        <option value="gte">Greater than or Equal to</option>
-                        <option value="exactly">Exactly</option>
-                        <option value="lt">Less than</option>
-                        <option value="lte">Less than or Equal to</option>
-                    </select>
-                </div>
-                <div class="dropdown">
-                  <label for="endTimeText">Time:</label>
-                  <input type="text" id="endTimeText" name="startTimeText" placeholder="2:55pm">
-                </div>
-                <div class="dropdown">
-                  <label for="instructorName">Instructor's Name:</label>
-                  <input type="text" id="instructorName" name="instructorName" placeholder="Obrenic">
-                </div>
-                <div class="course-date-time-container">
-                  <div class="date-container">
-                    <label for="mon">Mon</label>
-                    <input class="checkbox" type="checkbox" id="mon" name="mon" checked>
-                    <label for="tues">Tues</label>
-                    <input class="checkbox" type="checkbox" id="tues" name="tues">
-                    <label for="wed">Wed</label>
-                    <input class="checkbox" type="checkbox" id="wed" name="wed" checked>
-                  </div>
-                  <div class="date-container">
-                    <label for="thurs">Thurs</label>
-                    <input class="checkbox" type="checkbox" id="thurs" name="thurs">
-                    <label for="fri">Fri</label>
-                    <input class="checkbox" type="checkbox" id="fri" name="fri">
-                  </div>
-                  <div class="date-container">
-                    <label for="sat">Sat</label>
-                    <input class="checkbox" type="checkbox" id="sat" name="sat">
-                    <label for="sun">Sun</label>
-                    <input class="checkbox" type="checkbox" id="sun" name="sun">
-                  </div>
-                </div>
-            </div>
-            </form>
         </div>
     </div>
     
