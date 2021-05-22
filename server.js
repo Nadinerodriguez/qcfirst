@@ -3,19 +3,12 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
-
-var db_config = {
-	host     : 'remotemysql.com',
-	port	 : '3306',
-    user     : 'Vzy22Pgnp5',
-    password : 'gkM63NE4Og',
-    database : 'Vzy22Pgnp5'
-}
+var DB_CONFIG = require('./app/config/db.config.js');
 
 var connection;
 function handleReconnection() {
 
-	connection = mysql.createConnection(db_config);
+	connection = mysql.createConnection(DB_CONFIG);
 	connection.connect((error) => {            
 		if(error) {                                     
 		  console.log('Error experienced while connecting to database:', error);
@@ -27,7 +20,10 @@ function handleReconnection() {
 		console.log('Database error: ', error);
 		if(error.code === 'PROTOCOL_CONNECTION_LOST') { 
 		  handleReconnection();                         
-		} else {                                      
+		}
+        else if(error.fatal) {
+            handleReconnection();
+        } else {                                      
 		  throw error;                                  
 		}
 	  });
@@ -104,14 +100,14 @@ app.post('/register', (req,res) => {
 					});
 					if (accountType === 'student') {
 						//insert into students table
-						connection.query('INSERT INTO students (user_ID, first_name, last_name) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
+						connection.query('INSERT INTO students (user_ID, student_first, student_last) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
 							if (error) throw error;
 							console.log("1 record inserted into students");
 							res.end();
 						});
 					} else {
 						//insert into faculty table
-						connection.query('INSERT INTO faculty (acc_ID, first_name, last_name) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
+						connection.query('INSERT INTO faculty (acc_ID, faculty_first, faculty_last) VALUES (LAST_INSERT_ID(), ?, ?)', [firstName, lastName], (error, results, fields) => {
 							if (error) throw error;
 							console.log("1 record inserted into faculty");
 							res.end();
@@ -227,6 +223,7 @@ app.get('/manage-courses', (req,res) => {
 	res.end();
 });
 
+require("./app/routes/courses.routes.js")(app);
 
 app.listen(3000, () => {
 	console.log("Server is up");
