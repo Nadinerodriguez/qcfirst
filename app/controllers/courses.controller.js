@@ -25,7 +25,9 @@ exports.create = (req, res) => {
     course_end_time: req.body.course_end_time,
     course_desc: req.body.course_desc,
     enroll_deadline: req.body.enroll_deadline,
-    number_enrolled: req.body.number_enrolled
+    number_enrolled: req.body.number_enrolled,
+    course_title: req.body.course_title,
+    course_days: req.body.course_days
   });
 
   // Save Course in the database

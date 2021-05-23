@@ -23,6 +23,7 @@ const loadCourses = async () => {
   try {
     const response = await fetch('/courses');
     data = await response.json();
+    console.log(data);
     displayCourses(data);
   } catch (err) {
     console.error(err);

@@ -11,7 +11,7 @@ module.exports = app => {
     app.get("/faculty/:faculty_id", faculty.findOneWithFid);
 
     // Retrieve a single faculty with user_id
-    app.get("/faculty/user/:faculty_id", faculty.findOneWithUid);
+    app.get("/faculty/user/:acc_id", faculty.findOneWithUid);
   
     // Update a faculty with faculty_id
     app.put("/faculty/:faculty_id", faculty.update);
