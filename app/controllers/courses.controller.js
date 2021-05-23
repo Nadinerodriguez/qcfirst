@@ -96,7 +96,7 @@ exports.update = (req, res) => {
     );
 };
 
-// Delete a Customer with the specified customerId in the request
+// Delete a Course with the specified course_id in the request
 exports.delete = (req, res) => {
     Course.remove(req.params.course_id, (err, data) => {
       if (err) {
@@ -113,7 +113,7 @@ exports.delete = (req, res) => {
     });
 };
 
-// Delete all Customers from the database.
+// Delete all Courses from the database.
 exports.deleteAll = (req, res) => {
     Course.removeAll((err, data) => {
       if (err)

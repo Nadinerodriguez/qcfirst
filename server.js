@@ -4,6 +4,13 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 var DB_CONFIG = require('./app/config/db.config.js');
+var userConfig = {
+	id: 'unmarked',
+	sid: 'unmarked',
+	fid: 'unmarked',
+	email: 'unmarked',
+	type: 'unmarked'
+}
 
 var pool = mysql.createPool(DB_CONFIG);
 
@@ -19,6 +26,19 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
+	req.session.loggedin = false;
+	req.session.userEmail = null;
+	req.session.accountType = null;
+	userConfig = {
+		accountId: 'unmarked',
+		sid: 'unmarked',
+		fid: 'unmarked',
+		email: 'unmarked',
+		type: 'unmarked'
+	}
+	console.log("login session is " + req.session.loggedin);
+	console.log(userConfig);
+
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
@@ -29,6 +49,9 @@ app.post('/auth', (req,res) => {
 	var userPassword = req.body['user-password'];
 	var accountType = req.body['account-type'];
 
+	userConfig['email'] = userEmail;
+	userConfig['type'] = accountType;
+
 	if (userEmail && userPassword && accountType) {
 		pool.getConnection((err, connection) => {
 			if (err) throw err;
@@ -37,6 +60,8 @@ app.post('/auth', (req,res) => {
 					req.session.loggedin = true;
 					req.session.userEmail = userEmail;
 					req.session.accountType = accountType;
+					userConfig['id'] = results[0].user_id;
+					console.log(userConfig);
 					console.log('login is ' + req.session.loggedin);
 					res.redirect('/home');
 				} else {
@@ -124,7 +149,17 @@ app.post('/register', (req,res) => {
 app.get('/login', (req,res) => {
 	console.log("login session is " + req.session.loggedin);
 	req.session.loggedin = false;
+	req.session.userEmail = null;
+	req.session.accountType = null;
+	userConfig = {
+		id: 'unmarked',
+		sid: 'unmarked',
+		fid: 'unmarked',
+		email: 'unmarked',
+		type: 'unmarked'
+	}
 	console.log("login session is " + req.session.loggedin);
+	console.log(userConfig);
     res.redirect('/index.html');
 });
 
@@ -229,6 +264,9 @@ app.get('/manage-courses', (req,res) => {
 });
 
 require("./app/routes/courses.routes.js")(app);
+require("./app/routes/accounts.routes.js")(app);
+require("./app/routes/students.routes.js")(app);
+require("./app/routes/faculty.routes.js")(app);
 
 app.listen(3000, () => {
 	console.log("Server is up");

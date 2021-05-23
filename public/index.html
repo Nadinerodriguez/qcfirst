@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Log In - QCFirst</title>
         <link rel="stylesheet" href="styles/login-styles.css">
+        <script src="./JavaScript/emailConfig.js" defer></script>
     </head>
     <body>
         <div class="bg-image"></div>
@@ -25,7 +26,7 @@
                     <input class="radio-btn" type="radio" id="faculty-radio" name="account-type" value="faculty">
                     <label class="radio-btn" for="faculty-radio">Faculty</label><br>
                     <!--Submit buttons-->
-                    <button class="login-btn" type="submit" value="Submit">Log In</button>
+                    <button class="login-btn" type="submit" value="Submit" onclick="setEmailConfig()">Log In</button>
                 </form>
                 <form action="/signup" method="GET">
                     <label for="sign-up-btn" class="new-user-text">New User?</label>
