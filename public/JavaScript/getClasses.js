@@ -6,7 +6,7 @@
 // }
 getData();
 async function getData() {
-  const response = await fetch('/courses');
-  const data = await response.json();
-  console.log(data);
+    const response = await fetch('/courses');
+    const data = await response.json();
+    console.log(data);
 }
