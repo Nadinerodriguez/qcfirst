@@ -12,7 +12,8 @@ searchBar.addEventListener('keyup', (e) => {
         result.course_room.toLowerCase().includes(searchString) ||
         result.course_section.toLowerCase().includes(searchString) ||
         result.course_season.toLowerCase().includes(searchString) ||
-        result.course_year.toLowerCase().includes(searchString)
+        result.course_year.toLowerCase().includes(searchString) ||
+        result.course_title.toLowerCase().includes(searchString)
     );
   });
   displayCourses(filteredCourses);
@@ -44,8 +45,9 @@ const displayCourses = (x) => {
 <h4>Semester:</h4>
 <p>${course.course_season[0].toUpperCase() + course.course_season.slice(1) + " " +course.course_year}</p>
 <h4>Enrolled:</h4>
-<p>${course.number_occupied}</p>
-<p>Course Title</p>
+<p>${course.number_enrolled + "/" + course.course_capacity}</p>
+<h4>Course Title:</h4>
+<p>${course.course_title}</p>
 <button class="status-btn">Open</button>
 <button class="add-btn">Add to planner</button>
 <button class="enroll-btn">Enroll</button>
