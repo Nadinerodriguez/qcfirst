@@ -1,5 +1,6 @@
 var userConfig = JSON.parse(localStorage.getItem('userConfig'));
 console.log(userConfig);
+
 getUserType();
 
 async function getUserType() {

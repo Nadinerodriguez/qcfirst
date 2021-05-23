@@ -55,7 +55,7 @@ Student.findById = (student_id, result) => {
 Student.findByUid = (user_id, result) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
-    connection.query(`SELECT students.student_id, students.student_first, students.student_last, accounts.user_email, accounts.user_id, accounts.user_type FROM students INNER JOIN accounts ON students.user_id = accounts.user_id WHERE student.user_id = ${user_id}`, (err, res) => {
+    connection.query(`SELECT students.student_id, students.student_first, students.student_last, accounts.user_email, accounts.user_id, accounts.user_type FROM students INNER JOIN accounts ON students.user_id = accounts.user_id WHERE students.user_id = ${user_id}`, (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(err, null);
