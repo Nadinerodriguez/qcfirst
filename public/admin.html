@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/navbar-styles.css">
     <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/course-search-styles.css">
+    <script src="./JavaScript/getClassesAdmin.js" defer></script>
 </head>
 <body>
 <!-- Nav bar-->
@@ -58,96 +59,6 @@
                     <h4>last_name</h4>
                     <p>Rodriguez</p>
                 </div>
-                <div class="card">
-                    <h4>student_id:</h4>
-                    <p>12345678</p>
-                    <h4>user_id</h4>
-                    <p>123</p>
-                    <h4>first_name</h4>
-                    <p>Daniel</p>
-                    <h4>last_name</h4>
-                    <p>Rodriguez</p>
-                </div>
-                <div class="card">
-                    <h4>student_id:</h4>
-                    <p>12345678</p>
-                    <h4>user_id</h4>
-                    <p>123</p>
-                    <h4>first_name</h4>
-                    <p>Daniel</p>
-                    <h4>last_name</h4>
-                    <p>Rodriguez</p>
-                </div>
-                <div class="card">
-                    <h4>student_id:</h4>
-                    <p>12345678</p>
-                    <h4>user_id</h4>
-                    <p>123</p>
-                    <h4>first_name</h4>
-                    <p>Daniel</p>
-                    <h4>last_name</h4>
-                    <p>Rodriguez</p>
-                </div>
-                <div class="card">
-                    <h4>student_id:</h4>
-                    <p>12345678</p>
-                    <h4>user_id</h4>
-                    <p>123</p>
-                    <h4>first_name</h4>
-                    <p>Daniel</p>
-                    <h4>last_name</h4>
-                    <p>Rodriguez</p>
-                </div>
-                <div class="card">
-                    <h4>student_id:</h4>
-                    <p>12345678</p>
-                    <h4>user_id</h4>
-                    <p>123</p>
-                    <h4>first_name</h4>
-                    <p>Daniel</p>
-                    <h4>last_name</h4>
-                    <p>Rodriguez</p>
-                </div>
-                <div class="card">
-                    <h4>student_id:</h4>
-                    <p>12345678</p>
-                    <h4>user_id</h4>
-                    <p>123</p>
-                    <h4>first_name</h4>
-                    <p>Daniel</p>
-                    <h4>last_name</h4>
-                    <p>Rodriguez</p>
-                </div>
-                <div class="card">
-                    <h4>student_id:</h4>
-                    <p>12345678</p>
-                    <h4>user_id</h4>
-                    <p>123</p>
-                    <h4>first_name</h4>
-                    <p>Daniel</p>
-                    <h4>last_name</h4>
-                    <p>Rodriguez</p>
-                </div>
-                <div class="card">
-                    <h4>student_id:</h4>
-                    <p>12345678</p>
-                    <h4>user_id</h4>
-                    <p>123</p>
-                    <h4>first_name</h4>
-                    <p>Daniel</p>
-                    <h4>last_name</h4>
-                    <p>Rodriguez</p>
-                </div>
-                <div class="card">
-                <h4>student_id:</h4>
-                <p>12345678</p>
-                <h4>user_id</h4>
-                <p>123</p>
-                <h4>first_name</h4>
-                <p>Daniel</p>
-                <h4>last_name</h4>
-                <p>Rodriguez</p>
-            </div>
             </div>
         </div>
         <div class="class-identifier">
@@ -201,38 +112,7 @@
             <div class="class-title">
                 <h3 class="class-number">Courses Table</h3>
             </div>
-            <div class="card-results">
-                <div class="card">
-                    <h4>course_id</h4>
-                    <p>12345678</p>
-                    <h4>faculty_id</h4>
-                    <p>12345678</p>
-                    <h4>dept_id</h4>
-                    <p>125</p>
-                    <h4>course_name</h4>
-                    <p>CSCI 111</p>
-                    <h4>course_credits</h4>
-                    <p>3</p>
-                    <h4>course_section</h4>
-                    <p>42</p>
-                    <h4>course_season</h4>
-                    <p>fall</p>
-                    <h4>course_year</h4>
-                    <p>2021</p>
-                    <h4>course_room</h4>
-                    <p>SB-101</p>
-                    <h4>course_deadline</h4>
-                    <p>August 26 2021</p>
-                    <h4>course_capacity</h4>
-                    <p>160</p>
-                    <h4>course_start_time</h4>
-                    <p>13:40</p>
-                    <h4>course_end_time</h4>
-                    <p>14:55</p>
-                    <h4>course_desc</h4>
-                    <p>Description....</p>
-                </div>
-            </div>
+            <div class="card-results" id="cards"></div>
         </div>
         <div class="class-identifier">
             <div class="class-title">
