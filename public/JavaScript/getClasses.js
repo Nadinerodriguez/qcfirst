@@ -35,10 +35,12 @@ const displayCourses = (x) => {
     return `
     <div class="card">
 <h3>${course.course_name}</h3>
-<h4>Days & Times:</h4>
-<p>Mon 1:40pm (still hard coded)</p>
+<h4>Course Title:</h4>
+<p>${course.course_title}</p>
 <h4>Instructor:</h4>
 <p>Mark (still hard coded)</p>
+<h4>Days & Times:</h4>
+<p>Mon 1:40pm (still hard coded)</p>
 <h4>Section:</h4>
 <p>${course.course_section}</p>
 <h4>Room:</h4>
@@ -47,8 +49,6 @@ const displayCourses = (x) => {
 <p>${course.course_season[0].toUpperCase() + course.course_season.slice(1) + " " +course.course_year}</p>
 <h4>Enrolled:</h4>
 <p>${course.number_enrolled + "/" + course.course_capacity}</p>
-<h4>Course Title:</h4>
-<p>${course.course_title}</p>
 <button class="status-btn">Open</button>
 <button class="add-btn">Add to planner</button>
 <button class="enroll-btn">Enroll</button>
