@@ -51,6 +51,7 @@ Nadine Rodriguez
 
 ## Visual Designs using Figma
 <a href="https://github.com/Nadinerodriguez/qcfirst/tree/main/VisualDesigns">Link to our visual designs</a>
+<br/>
 **Sign Up/Log In Page**
 - Students and Faculties can sign up using their QCfirst email addresses.
 - To sign up, the user needs to provide a username, password, and their first and last names.
