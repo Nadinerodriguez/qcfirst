@@ -134,10 +134,10 @@ body {
 }
 
 img.user-picture {
-    width: 150px;
+    width: 250px;
     height: auto;
     border-radius: 30px;
-    padding: 15px;
+    padding: 10px;
 }
 
 footer {
