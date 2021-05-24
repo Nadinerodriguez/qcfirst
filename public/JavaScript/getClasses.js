@@ -58,7 +58,6 @@ const displayCourses = (x) => {
 <p>${course.dept_name}</p>
 <button class="status-btn">Open</button>
 <button class="add-btn" onclick="addToPlanner(\'${course.course_id}\')">Add to planner</button>
-<button class="enroll-btn" onclick="addToPlannerMove(\'${course.course_id}\')">Enroll</button>
 </div>  
     `;
     }).join('');
