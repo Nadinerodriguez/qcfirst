@@ -42,9 +42,10 @@ Nadine Rodriguez
 ## A link to which web page each feature can be found on
 
 ## Choice of front-end / client-side technologies
--
+- We decided to stick to the basic HTML, CSS, and JavaScript. We just chose JavaScript as it's a powerful tool that allowed us to build UI components. We didn't use a framework as we had a time restriction and we felt that we were most comfortable in just using plain JavaScript.
+
 ## Choice of back-end / server-side technologies
-- Node.js/Express:
+- Node.js/Express: We felt that Node.js was an ideal choice as we had the ability to execute similar code on both the client and server side. It was easier to send data between the server and client side. Node.js also had a great framework and libraries which made our project slightly easier to work with. It allowed us to construct an API and to implement interaction with existing applications.
 
 ## Choice of database management system
 - MySQL: We were more comfortable in using MySQL and decided to use this instead of MongoDB. Also because it's an open source database. Furthermore, MySQL offers great security features that ensure data protection. This is important because we're storing sensitive information such as passwords and a user's ID. It's the most secure and reliable database management system. The roles/users can be defined with a list of permissions that can be granted or revoked for the user. It can also run on various platforms. Lastly, it uses SQL which is the standard language choice for modern database system.
