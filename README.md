@@ -22,24 +22,27 @@ Nadine Rodriguez
 - Back End: Researched on what best technologies to use for the backend such as Firebase, Node.js, and Express.js. Tried using Firebase's Authentication for the Sign Up and Login pages but later decided with my partner that his solution was the best approach in the long run. I set up the MySQL database. I designed and created the various tables we needed to store information about the users and courses. I also wrote several test and edge cases for all of our pages .
   - UML Diagram: <img src="/public/images/UML.png" /><br />
 
-## List of features of our app
+## List of features of our app (With Links)
 - You can sign in to either a student or faculty user
 - You can sign up as a student or faculty. A user needs to provide their first name, last name, email and set a password to sign up for an account.
 - As a Student you can:
   - View your schedule (courses you are currently enrolled to)
+    - <a href="https://qcfirst.danielrodrigu21.repl.co">Schedule Feature</a>
   - View and search for offered courses
+    - <a href="https://qcfirst.danielrodrigu21.repl.co">Search feature</a>
   - Add a course to your planner/cart
   - Enroll for a course
   - Drop a course you are enrolled
   - Remove a course in your planner/cart
 - As an Instructor you can:
-  - Create a course
-  - Delete a course
+  - Create and delete a course
+    - <a href="https://qcfirst.danielrodrigu21.repl.co">Create and delete feature</a>
   - View and search for offered courses
+    - <a href="https://qcfirst.danielrodrigu21.repl.co">Search feature</a>
   - View the courses they are teaching
+    - <a href="https://qcfirst.danielrodrigu21.repl.co">Courses they're teaching feature</a>
   - View the roster of students enrolled to their courses
-
-## A link to which web page each feature can be found on
+    - <a href="https://qcfirst.danielrodrigu21.repl.co"> Roster feature</a>
 
 ## Choice of front-end / client-side technologies
 - We decided to stick to the basic HTML, CSS, and JavaScript. We just chose JavaScript as it's a powerful tool that allowed us to build UI components. We didn't use a framework as we had a time restriction and we felt that we were most comfortable in just using plain JavaScript.
@@ -53,6 +56,11 @@ Nadine Rodriguez
 ## Visual Designs using Figma
 <a href="https://github.com/Nadinerodriguez/qcfirst/tree/main/VisualDesigns">Link to our visual designs</a>
 <br/>
+
+## A summary of any differences between our visual designs and final outcome
+- In our Visual Designs, we initially wanted the form in our sign up and log in pages to be on the right side of the page. But for the final outcome, we decided to just put the form in the center of the page. We also removed the "table" for our schedule in our final outcome. Instead of a table, we have the courses listed in rows. We also decided to remove the advanced search feature as users can just type their "specific" course in the search bar.
+
+## Visual Designs using Figma
 **Sign Up/Log In Page**
 - Students and Faculties can sign up using their QCfirst email addresses.
 - To sign up, the user needs to provide a username, password, and their first and last names.
@@ -109,6 +117,3 @@ Nadine Rodriguez
 <img src="/VisualDesigns/desktop/manage-course(desktop).png" /><br />
 <img src="/VisualDesigns/tablet/manage-course(tablet).png" /><br />
 <img src="/VisualDesigns/mobile/manage-course(mobile).png" /><br />
-
-## A summary of any differences between our visual designs and final outcome
-- In our Visual Designs, we initially wanted the form in our sign up and log in pages to be on the right side of the page. But for the final outcome, we decided to just put the form in the center of the page. We also removed the "table" for our schedule in our final outcome. Instead of a table, we have the courses listed in rows. We also decided to remove the advanced search feature as users can just type their "specific" course in the search bar.
