@@ -13,8 +13,8 @@ module.exports = app => {
     // Retrieve a single student with user_id
     app.get("/students/user/:user_id", students.findOneWithUid);
 
-    // Retrieve a single student with student_id
-    app.get("/students/user/:user_id", students.findOneWithUid);
+    // Retrieve courses with student_id
+    app.get("/students/courses/:student_id", students.findOneWithUid);
   
     // Update a student with student_id
     app.put("/students/:student_id", students.update);
