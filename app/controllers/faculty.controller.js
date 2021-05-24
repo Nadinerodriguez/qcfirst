@@ -74,6 +74,40 @@ exports.findOneWithUid = (req, res) => {
   });
 };
 
+// Find courses with a faculty_id
+exports.findCourses = (req, res) => {
+  Faculty.findCourses(req.params.faculty_id, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found courses with faculty id ${req.params.faculty_id}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving courses with faculty id " + req.params.faculty_id
+        });
+      }
+    } else res.send(data);
+  });
+};
+
+// Find course roster with a course_id
+exports.findCourseRoster = (req, res) => {
+  Faculty.findCourseRoster(req.params.course_id, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found courses with faculty id ${req.params.course_id}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving courses with faculty id " + req.params.course_id
+        });
+      }
+    } else res.send(data);
+  });
+};
+
 // Update a faculty identified by the faculty_id in the request
 exports.update = (req, res) => {
     // Validate Request

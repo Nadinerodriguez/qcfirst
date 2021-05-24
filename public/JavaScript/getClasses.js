@@ -41,7 +41,7 @@ const displayCourses = (x) => {
 <h4>Course Title:</h4>
 <p>${course.course_title}</p>
 <h4>Instructor:</h4>
-<p>${course.faculty_first}</p>
+<p>${course.faculty_first + ' ' + course.faculty_last}</p>
 <h4>Days & Times:</h4>
 <p>${course.course_days + " " + course.course_start_time + " - " + course.course_end_time}</p>
 <h4>Section:</h4>
@@ -55,12 +55,16 @@ const displayCourses = (x) => {
 <h4>Department:</h4>
 <p>${course.dept_name}</p>
 <button class="status-btn">Open</button>
-<button class="add-btn" onclick="addToPlanner()">Add to planner</button>
-<button class="enroll-btn" onclick="addToPlannerMove()">Enroll</button>
+<button class="add-btn" onclick="addToPlanner(\'${course.course_id}\')">Add to planner</button>
+<button class="enroll-btn" onclick="addToPlannerMove(\'${course.course_id}\')">Enroll</button>
 </div>  
     `;
     }).join('');
     coursesList.innerHTML = htmlString;
+}
+
+function addToPlanner(id) {
+    console.log(id);
 }
 
 loadCourses();

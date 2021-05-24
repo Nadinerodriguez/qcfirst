@@ -69,7 +69,7 @@ Course.getAll = result => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
     console.log("calling getAll()");
-    connection.query("SELECT * FROM courses INNER JOIN departments ON courses.dept_id = departments.dept_id ORDER BY courses.course_name ASC, courses.course_start_time ASC", (err, res) => {
+    connection.query("SELECT * FROM courses INNER JOIN departments ON courses.dept_id = departments.dept_id INNER JOIN faculty ON courses.faculty_id = faculty.faculty_id ORDER BY courses.course_name ASC, courses.course_start_time ASC", (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(null, err);

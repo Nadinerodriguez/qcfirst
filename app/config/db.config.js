@@ -1,5 +1,5 @@
 module.exports = {
-    connectionLimit : 15,
+    connectionLimit : 25,
 	host            : 'remotemysql.com',
 	port	        : '3306',
     user            : 'Vzy22Pgnp5',

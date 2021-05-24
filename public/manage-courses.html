@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/navbar-styles.css">
     <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/manage-courses-styles.css">
+    <script src="./JavaScript/getInstructorCourses.js"></script>
 </head>
 <body>
 <!-- Nav bar-->
@@ -48,23 +49,7 @@
             <header class="my-courses-header">
                 <h2>My Courses</h2>
             </header>
-            <div class="entries-container">
-                <div class="course-entry">
-                    <label for="cs320">CS 320 Section1 M/W 1:45pm-2:55pm</label>
-                    <input class="checkbox" type="checkbox" id="cs320" name="cs320" value="cs320">
-                </div>
-                <div class="course-entry">
-                    <label for="cs316">CS 316 Section5 M/W 3:10pm-4:25pm</label>
-                    <input class="checkbox" type="checkbox" id="cs316" name="cs316" value="cs316" checked>
-                </div>
-                <div class="course-entry">
-                    <label for="math201">MATH 201 Section1 T/Th 1:45pm-2:55pm</label>
-                    <input class="checkbox" type="checkbox" id="math201" name="math201" value="math201">
-                </div>
-                <div class="course-entry">
-                    <label for="hist104">HIST 104 Section1 M/W 4:30pm-5:45pm</label>
-                    <input class="checkbox" type="checkbox" id="hist104" name="hist104" value="hist104">
-                </div>
+            <div class="entries-container" id="my-created-courses">
             </div>
             <div class="btn-container">
                 <button class="btn update-btn" type="button" id="update" name="update" value="Update">Update</button>

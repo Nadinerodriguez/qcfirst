@@ -77,6 +77,60 @@ Faculty.findByUid = (acc_id, result) => {
   });
 };
 
+Faculty.findCourses = (faculty_id, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(`SELECT * FROM courses 
+    INNER JOIN faculty_courses ON courses.course_id = faculty_courses.c_id 
+    WHERE faculty_id = ${faculty_id}`, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+  
+      if (res.length) {
+        console.log("found courses: ", res[0]);
+        result(null, res[0]);
+        return;
+      }
+  
+      // not found course with the id
+      result({ kind: "not_found" }, null);
+  
+      //release connnection
+      connection.release();
+    });
+  });
+};
+
+Faculty.findCourseRoster = (course_id, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(`SELECT * FROM courses
+    INNER JOIN student_courses ON courses.course_id = student_courses.co_id 
+    INNER JOIN students ON student_courses.stu_id = students.student_id WHERE courses.course_id = ${course_id};`, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+  
+      if (res.length) {
+        console.log("found course roster: ", res[0]);
+        result(null, res[0]);
+        return;
+      }
+  
+      // not found roster with the id
+      result({ kind: "not_found" }, null);
+  
+      //release connnection
+      connection.release();
+    });
+  });
+};
+
 Faculty.getAll = result => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
