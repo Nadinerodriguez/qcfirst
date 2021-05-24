@@ -28,6 +28,26 @@ exports.create = (req, res) => {
   });
 };
 
+// Create and Save a new faculty course
+exports.createCourse = (req, res) => {
+  // Validate request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+  // Save faculty in the database
+  Faculty.createCourse(req.body, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while creating the faculty course."
+      });
+    else res.send(data);
+  });
+};
+
 // Retrieve all faculty from the database.
 exports.findAll = (req, res) => {
     Faculty.getAll((err, data) => {
@@ -63,6 +83,23 @@ exports.findAllDepCourses = (req, res) => {
       } else {
         res.status(500).send({
           message: "Error retrieving department courses with department name " + req.params.department_name
+        });
+      }
+    } else res.send(data);
+  });
+};
+
+// Find a single faculty with a faculty_id
+exports.findCourseTitle = (req, res) => {
+  Faculty.findCourseTitle(req.params.course_name, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found course title with name ${req.params.course_name}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving course title with name " + req.params.course_name
         });
       }
     } else res.send(data);

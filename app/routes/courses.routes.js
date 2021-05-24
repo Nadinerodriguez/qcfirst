@@ -3,6 +3,9 @@ module.exports = app => {
   
     // Create a new Course
     app.post("/courses", courses.create);
+
+    // Create a new Course with a generated id
+    app.post("/courses/new", courses.createNew);
   
     // Retrieve all Courses
     app.get("/courses", courses.findAll);

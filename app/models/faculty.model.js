@@ -27,6 +27,25 @@ Faculty.create = (newFaculty, result) => {
   });
 };
 
+Faculty.createCourse = (newCourse, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query("INSERT INTO faculty_courses SET ?", newCourse, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+  
+      console.log("created faculty course: ", { id: res.insertId, ...newCourse });
+      result(null, { id: res.insertId, ...newCourse });
+  
+      //release connnection
+      connection.release();
+    });
+  });
+};
+
 Faculty.findById = (faculty_id, result) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
@@ -190,6 +209,31 @@ Faculty.findAllDepCourses = (department_name, result) => {
       }
   
       // not found course with the id
+      result({ kind: "not_found" }, null);
+  
+      //release connnection
+      connection.release();
+    });
+  });
+};
+
+Faculty.findCourseTitle = (course_name, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(`SELECT * FROM department_courses WHERE course_name = ?`, course_name, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+  
+      if (res.length) {
+        console.log("found course title: ", res[0]);
+        result(null, res[0]);
+        return;
+      }
+  
+      // not found course title with name
       result({ kind: "not_found" }, null);
   
       //release connnection

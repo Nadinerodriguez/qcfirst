@@ -22,8 +22,14 @@ module.exports = app => {
     // Retrieve department courses
     app.get("/faculty/departments/courses/:department_name", faculty.findAllDepCourses);
 
+    // Retrieve the course title of the course name
+    app.get("/faculty/departments/courses/title/:course_name", faculty.findCourseTitle);
+
     // Retrieve instructor course roster with course_id
     app.get("/faculty/courses/roster/:course_id", faculty.findCourseRoster);
+
+    // Update a faculty courses with faculty_id
+    app.put("/faculty/courses/new", faculty.createCourse);
   
     // Update a faculty with faculty_id
     app.put("/faculty/:faculty_id", faculty.update);

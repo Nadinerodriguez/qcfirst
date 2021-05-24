@@ -3,7 +3,6 @@ console.log(userConfig);
 
 let dept_id;
 var newCourse = {
-    course_id: '',
     faculty_id: userConfig['fid'],
     dept_id: '',
     course_name: '',
@@ -95,6 +94,23 @@ async function getCourseNames(department) {
     }
 }
 
+async function getCourseTitle(courseName) {
+    if (userConfig['type'] === 'faculty') {
+        try {
+            var response = await fetch(`/faculty/departments/courses/title/${courseName}`);
+            var data = await response.json();
+            console.log("attempting to retrieve course title");
+            console.log(data);
+            newCourse['course_title'] = data['course_title'];
+            newCourse['dept_id'] = data['dep_id'];
+            insertIntoCourses(newCourse);
+        } catch (error) {
+            console.log(error);
+        }
+        
+    }
+}
+
 function validateInput() {
     const selectSeason = document.getElementById('season');
     const selectYear = document.getElementById('year');
@@ -115,31 +131,13 @@ function validateInput() {
 
     const textDesc = document.getElementById('course-desc');
 
-    console.log(selectSeason.value);
-    console.log(selectYear.value);
-    console.log(selectDepartment.value);
-    console.log(selectName.value);
-    console.log(isNaN(selectCap.value));
-
-    console.log(checkMon.checked);
-    console.log(checkTues.checked);
-    console.log(checkWed.value);
-    console.log(checkThurs.value);
-    console.log(checkFri.value);
-    console.log(checkSat.value);
-    console.log(checkSun.value);
-
-    console.log(timeStart.value);
-    console.log(timeEnd.value);
-
-    console.log(textDesc.value);
     newCourse['course_name'] = selectName.value;
     newCourse['course_credits'] = 3;
-    //newCourse['course_section'] = getGeneratedSection(); //todo
+    newCourse['course_section'] = Math.floor(Math.random() * 100);
     newCourse['course_season'] = selectSeason.value;
     newCourse['course_year'] = selectYear.value;
-    //newCourse['course_room'] = getGeneratedRoom(); //todo
-    newCourse['enroll_deadline'] = new Date(selectYear.value + enrollDeadlines[selectSeason.value]);
+    newCourse['course_room'] = getGeneratedRoom();
+    newCourse['enroll_deadline'] = new Date(selectYear.value + enrollDeadlines[selectSeason.value]).toISOString().slice(0, 19).replace('T', ' ');
     
     //set course capacity
     if (selectCap.value.length > 0 && !isNaN(selectCap.value)) {
@@ -167,6 +165,127 @@ function validateInput() {
 
     newCourse['course_desc'] = textDesc.value;
     newCourse['number_enrolled'] = 0;
-    
-    
+
+    //get course days
+    var courseDays = [];
+    console.log('course days length ' + courseDays.length);
+    if (checkMon.checked) {
+        if (courseDays.length>0) {
+            courseDays.push('/' + checkMon.value);
+        }
+        else {
+            courseDays.push(checkMon.value);
+        }
+    }
+    if (checkTues.checked) {
+        if (courseDays.length>0) {
+            courseDays.push('/' + checkTues.value);
+        }
+        else {
+            courseDays.push(checkTues.value);
+        }
+    }
+    if (checkWed.checked) {
+        if (courseDays.length>0) {
+            courseDays.push('/' + checkWed.value);
+        }
+        else {
+            courseDays.push(checkWed.value);
+        }
+    }
+    if (checkThurs.checked) {
+        if (courseDays.length>0) {
+            courseDays.push('/' + checkThurs.value);
+        }
+        else {
+            courseDays.push(checkThurs.value);
+        }
+    }
+    if (checkFri.checked) {
+        if (courseDays.length>0) {
+            courseDays.push('/' + checkFri.value);
+        }
+        else {
+            courseDays.push(checkFri.value);
+        }
+    }
+    if (checkSat.checked) {
+        if (courseDays.length>0) {
+            courseDays.push('/' + checkSat.value);
+        }
+        else {
+            courseDays.push(checkSat.value);
+        }
+    }
+    if (checkSun.checked) {
+        if (courseDays.length>0) {
+            courseDays.push('/' + checkSun.value);
+        }
+        else {
+            courseDays.push(checkSun.value);
+        }
+    }
+    newCourse['course_days'] = courseDays.join('');
+    getCourseTitle(selectName.value);
 }
+
+function getGeneratedRoom() {
+    var result           = [];
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var charactersLength = characters.length;
+    var length = 2;
+    for ( var i = 0; i < length; i++ ) {
+      result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+    }
+   return result.join('') + '-' + Math.floor(Math.random() * 1000);
+}
+
+async function insertIntoCourses(newCourse) {
+    if (userConfig['type'] === 'faculty') {
+        fetch('/courses/new', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newCourse)
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            console.log("put courses data retrieved");
+            console.log(data);
+            location.reload();
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+}
+
+// async function insertIntoFacultyCourses(fid, cid) {
+//     if (userConfig['type'] === 'faculty') {
+//         fetch('/faculty/courses', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({
+//                 fac_id: fid,
+//                 c_id: cid
+//             })
+//         })
+//         .then(res => {
+//             return res.json();
+//         })
+//         .then(data => {
+//             console.log("put into faculty courses data retrieved");
+//             console.log(data);
+//         })
+//         .catch(err => {
+//             console.log(err);
+//         });
+//     }
+// }
+
+console.log(newCourse);

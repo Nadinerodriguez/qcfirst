@@ -30,10 +30,17 @@ Course.create = (newCourse, result) => {
         result(err, null);
         return;
       }
-  
-      console.log("created course: ", { id: res.insertId, ...newCourse });
-      result(null, { id: res.insertId, ...newCourse });
-  
+      
+      connection.query('INSERT INTO faculty_courses (fac_id, c_id) VALUES (?, ?)', [newCourse.faculty_id, res.insertId], (err, res) => {
+        if (err) {
+          console.log("error: ", err);
+          result(err, null);
+          return;
+        }
+
+        console.log("created faculty course: ", { id: newCourse.faculty_id, ...newCourse });
+        result(null, { id: newCourse.faculty_id, ...newCourse });
+      });
       //release connnection
       connection.release();
     });

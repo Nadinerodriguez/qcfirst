@@ -41,6 +41,26 @@ exports.create = (req, res) => {
   });
 };
 
+// Create a Course with a generated id
+exports.createNew = (req, res) => {
+  // Validate Request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+  // Save Course in the database
+  Course.create(req.body, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while creating the Course."
+      });
+    else res.send(data);
+  });
+};
+
 // Retrieve all Courses from the database.
 exports.findAll = (req, res) => {
     Course.getAll((err, data) => {
