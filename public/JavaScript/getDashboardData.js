@@ -27,8 +27,10 @@ async function getUserInformation() {
     }
     localStorage.setItem("userConfig", JSON.stringify(userConfig));
     document.getElementById('user-name').innerHTML = `${data.student_first + " " + data.student_last}`;
+    document.getElementById('user-name').innerHTML = `${data.faculty_first + " " + data.faculty_last}`;
     document.getElementById('user-email').innerHTML = `${data.user_email}`;
     document.getElementById('user-id').innerHTML = `${data.student_id}`;
+    document.getElementById('user-id').innerHTML = `${data.faculty_id}`;
 
 }
 

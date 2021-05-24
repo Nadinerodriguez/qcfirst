@@ -9,6 +9,8 @@ searchBar.addEventListener('keyup', (e) => {
         return (
             result.course_name.toLowerCase().includes(searchString) ||
             result.course_title.toLowerCase().includes(searchString) ||
+            result.faculty_first.toLowerCase().includes(searchString) ||
+            result.faculty_last.toLowerCase().includes(searchString) ||
             result.course_days.toLowerCase().includes(searchString) ||
             result.course_start_time.toLowerCase().includes(searchString) ||
             result.course_end_time.toLowerCase().includes(searchString) ||

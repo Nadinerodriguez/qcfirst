@@ -149,6 +149,7 @@ const displayAccounts = (x) => {
 loadAccounts();
 // End of accounts table
 
+
 // Departments Table
 // End of departments table
 
