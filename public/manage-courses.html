@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/manage-courses-styles.css">
     <script src="./JavaScript/getInstructorCourses.js"></script>
+    <script src="./JavaScript/getCourseFormOpt.js"></script>
 </head>
 <body>
 <!-- Nav bar-->
@@ -64,73 +65,86 @@
                 <form class="course-form" action="">
                     <div class="course-form-dropdown-container">
                         <div class="dropdown">
-                            <label for="semester">Semester</label>
-                            <select name="semester" id="semester">
-                                <option value="spring2021">Spring 2021</option>
-                                <option value="summer2021">Summer 2021</option>
-                                <option value="fall2021">Fall 2021</option>
+                            <label for="season">Semester</label>
+                            <select name="course_season" id="season">
+                                <option value="summer">Summer</option>
+                                <option value="fall">Fall</option>
+                                <option value="winter">Winter</option>
+                                <option value="spring">Spring</option>
+                            </select>
+                        </div>
+                        <div class="dropdown">
+                            <label for="semester">Year</label>
+                            <select name="course_year" id="year">
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
                             </select>
                         </div>
                         <div class="dropdown">
                             <label for="department">Department</label>
                             <select name="department" id="department">
-                                <option value="anth">Anthropology</option>
-                                <option value="cs">Computer Science</option>
-                                <option value="math">Mathematics</option>
+                                <option value="Anthropology">Anthropology</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Mathematics">Mathematics</option>
                             </select>
                         </div>
                         <div class="dropdown">
-                            <label for="courseName">Course Name</label>
-                            <select name="courseName" id="courseName">
-                                <option value="cs320">CS 320</option>
-                                <option value="cs313">CS 316</option>
-                                <option value="math201">Math 201</option>
+                            <label for="course-name">Course Name</label>
+                            <select name="course_name" id="course-name">
                             </select>
                         </div>
                         <div class="dropdown">
-                            <label for="courseCap">Course Capacity</label>
-                            <input type="text" id="courseCap" name="courseCap" placeholder="35">
+                            <label for="course-cap">Course Capacity</label>
+                            <input type="text" id="course-cap" name="course_capacity" placeholder="35" required>
                         </div>
                     </div>
                     <h4>Days taught:</h4>
                     <div class="course-date-time-container">
                         <div class="date-container">
                             <label for="mon">Mon</label>
-                            <input class="checkbox" type="checkbox" id="mon" name="mon" checked>
+                            <input class="checkbox" type="checkbox" id="mon" name="course_day" value="M" checked>
                             <label for="tues">Tues</label>
-                            <input class="checkbox" type="checkbox" id="tues" name="tues">
+                            <input class="checkbox" type="checkbox" id="tues" name="course_day" value="Tu">
                             <label for="wed">Wed</label>
-                            <input class="checkbox" type="checkbox" id="wed" name="wed" checked>
+                            <input class="checkbox" type="checkbox" id="wed" name="course_day" value="W" checked>
                             <label for="thurs">Thurs</label>
-                            <input class="checkbox" type="checkbox" id="thurs" name="thurs">
+                            <input class="checkbox" type="checkbox" id="thurs" name="course_day" value="Th">
                         </div>
                         <div class="date-container">
                             <label for="fri">Fri</label>
-                            <input class="checkbox" type="checkbox" id="fri" name="fri">
+                            <input class="checkbox" type="checkbox" id="fri" name="course_day" value="Fr">
                             <label for="sat">Sat</label>
-                            <input class="checkbox" type="checkbox" id="sat" name="sat">
+                            <input class="checkbox" type="checkbox" id="sat" name="course_day" value="Sat">
                             <label for="sun">Sun</label>
-                            <input class="checkbox" type="checkbox" id="sun" name="sun">
+                            <input class="checkbox" type="checkbox" id="sun" name="course_day" value="Sun">
                         </div>
                         <div class="time-container">
-                            <label for="startTimeText">Start Time:</label>
-                            <input  type="text" id="startTimeText" name="startTimeText" placeholder="2:55pm">
-                            <label for="endTimeText">End Time:</label>
-                            <input  type="text" id="endTimeText" name="startTimeText" placeholder="2:55pm">
+                            <label for="start-time-text">Start Time:</label>
+                            <input  type="text" id="start-time-text" name="course_start_time" placeholder="hh:mm" required>
+                            <label for="end-time-text">End Time:</label>
+                            <input  type="text" id="end-time-text" name="course_end_time" placeholder="hh:mm" required>
                         </div>
                        
                     </div>
                     <div class="course-description-container">
-                        <label for="courseDesc">Course Description</label>
-                        <textarea id="courseDesc" name="courseDesc" rows="5" cols="50" placeholder="Provide a course description."></textarea>
+                        <label for="cours-desc">Course Description</label>
+                        <textarea id="course-desc" name="course_desc" rows="5" cols="50" placeholder="Provide a course description." required></textarea>
                     </div>
                     <div class="btn-container">
-                        <button class="btn create-course-btn" type="button" id="create" name="create" value="Create">Create</button>
+                        <button class="btn create-course-btn" type="button" id="create" name="create" value="Create" onclick="validateInput()">Create</button>
                     </div>
                 </form>
             </div>
             
         </div>
+    </div>
+    <div class="cards-results-container" id="roster-container">
+        <div class="class-identifier">
+            <div class="class-title" id="roster-header">
+            </div>
+            <div class="card-results" id="cards"></div>
+        </div>
+
     </div>
 </div>
 <!--Wrapper ends-->

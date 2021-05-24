@@ -40,6 +40,35 @@ exports.findAll = (req, res) => {
     });
 };
 
+// Retrieve all department from the database.
+exports.findAllDep = (req, res) => {
+  Faculty.getAllDep((err, data) => {
+      if (err)
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving departments."
+        });
+      else res.send(data);
+  });
+};
+
+// Find department courses with a department_name
+exports.findAllDepCourses = (req, res) => {
+  Faculty.findAllDepCourses(req.params.department_name, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found department courses with department name ${req.params.department_name}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving department courses with department name " + req.params.department_name
+        });
+      }
+    } else res.send(data);
+  });
+};
+
 // Find a single faculty with a faculty_id
 exports.findOneWithFid = (req, res) => {
     Faculty.findById(req.params.faculty_id, (err, data) => {
@@ -97,11 +126,11 @@ exports.findCourseRoster = (req, res) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found courses with faculty id ${req.params.course_id}.`
+          message: `Not found course roster with course id ${req.params.course_id}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving courses with faculty id " + req.params.course_id
+          message: "Error retrieving course roster with course id " + req.params.course_id
         });
       }
     } else res.send(data);

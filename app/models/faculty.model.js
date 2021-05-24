@@ -90,8 +90,8 @@ Faculty.findCourses = (faculty_id, result) => {
       }
   
       if (res.length) {
-        console.log("found courses: ", res[0]);
-        result(null, res[0]);
+        console.log("found courses: ", res);
+        result(null, res);
         return;
       }
   
@@ -109,7 +109,7 @@ Faculty.findCourseRoster = (course_id, result) => {
     if (err) throw err;
     connection.query(`SELECT * FROM courses
     INNER JOIN student_courses ON courses.course_id = student_courses.co_id 
-    INNER JOIN students ON student_courses.stu_id = students.student_id WHERE courses.course_id = ${course_id};`, (err, res) => {
+    INNER JOIN students ON student_courses.stu_id = students.student_id WHERE student_courses.enroll_status = 'enrolled' and courses.course_id = ${course_id};`, (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(err, null);
@@ -117,8 +117,8 @@ Faculty.findCourseRoster = (course_id, result) => {
       }
   
       if (res.length) {
-        console.log("found course roster: ", res[0]);
-        result(null, res[0]);
+        console.log("found course roster: ", res);
+        result(null, res);
         return;
       }
   
@@ -144,6 +144,53 @@ Faculty.getAll = result => {
   
       console.log("faculty: ", res);
       result(null, res);
+  
+      //release connnection
+      connection.release();
+    });
+  });
+};
+
+Faculty.getAllDep = result => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    console.log("calling getAll()");
+    connection.query("SELECT * FROM departments ORDER BY dept_name ASC", (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+  
+      console.log("departments: ", res);
+      result(null, res);
+  
+      //release connnection
+      connection.release();
+    });
+  });
+};
+
+Faculty.findAllDepCourses = (department_name, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(`SELECT * FROM departments 
+    INNER JOIN department_courses ON departments.dept_id = department_courses.dep_id 
+    WHERE dept_name = ?`, department_name, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+  
+      if (res.length) {
+        console.log("found courses: ", res);
+        result(null, res);
+        return;
+      }
+  
+      // not found course with the id
+      result({ kind: "not_found" }, null);
   
       //release connnection
       connection.release();

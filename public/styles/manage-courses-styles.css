@@ -61,7 +61,7 @@ input.checkbox {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 }
@@ -100,6 +100,13 @@ input.checkbox {
     justify-content: space-between;
     padding: 15px 15px;
     margin: 5px;
+}
+
+.status-btn {
+    background-color: rgb(76, 194, 52);
+    font-size: 12px;
+    margin-bottom: 0;
+    box-shadow: none;
 }
 
 .btn-container {
@@ -165,6 +172,45 @@ input.checkbox {
     display: flex;
     flex-direction: column;
     align-items: baseline;
+}
+
+.cards-results-container {
+    grid-area: auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.class-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.semester-year {
+    color: rgb(104, 104, 104);
+}
+
+.card-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.card {
+    border: 1px solid black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 20px 15px;
+}
+
+.card > h4 {
+  color: red;
 }
 
 
