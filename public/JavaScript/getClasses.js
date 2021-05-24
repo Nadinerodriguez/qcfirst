@@ -63,6 +63,7 @@ const displayCourses = (x) => {
     `;
     }).join('');
     coursesList.innerHTML = htmlString;
+
 }
 
 function addToPlanner(id) {

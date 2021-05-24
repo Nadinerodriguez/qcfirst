@@ -16,18 +16,19 @@ async function getEnrolledCourses() {
                     ${data.map(function(course) {
                         return `
                         <div class="course-entry">
-                        <button class="status-btn" type="button" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+                        <button class="status-btn" type="button" name="class-status-btn" value="Class Status">Open</button>
                         <label for="${course.course_id}">${course.course_name + " Section "+ course.course_section + " "+ course.course_days + " "+ course.course_start_time + "-"+ course.course_end_time}</label>
-                        <input class="checkbox" type="checkbox" id="${course.course_id}" name="course_id" value="${course.course_id}" onclick="getRoster(\'${course.course_id}\')">
+                        <button class="status-btn" type="button" id="${course.course_id}" name="course_id" value="${course.course_id}" onclick="getRoster(\'${course.course_id}\')">Delete</button>
+
                         </div>
                             `
                     }).join('')}
                     `
                 } else
                     document.getElementById('my-created-courses').innerHTML = `<div class="course-entry">
-                        <button class="status-btn" type="button" name="class-status-btn" value="Class Status" onclick="location.href='course-enrollment.html'">Open</button>
+<!--                        <button class="status-btn" type="button" name="class-status-btn" value="Class Status">Open</button>-->
                         <label for="${data[0].course_id}">${data[0].course_name + " Section "+ data[0].course_section + " "+ data[0].course_days + " "+ data[0].course_start_time + "-"+ data[0].course_end_time}</label>                    
-                        <input class="checkbox" type="checkbox" id="${data[0].course_id}" name="course_id" value="${data[0].course_id}" onclick="getRoster(\'${data[0].course_id}\')">
+                       <button class="status-btn" type="button" id="${data[0].course_id}" name="course_id" value="${data[0].course_id}" onclick="getRoster(\'${data[0].course_id}\')">Delete </button>
                         </div>`;
             } else {
                 document.getElementById('my-created-courses').innerHTML = `<p>Currently not teaching any course</p>`;
@@ -50,11 +51,38 @@ async function getRoster(id) {
             }
             else if (data.length) {
                 if (data.length > 1) {
-                    
+                    document.getElementById('roster-header').innerHTML = `<h3>Roster of students</h3>`;
+                    document.getElementById('cards-roster').innerHTML = `
+                    ${data.map(function(student) {
+                        return `
+                        <div class="card">
+                        <h4>student_id:</h4>
+                        <p>${student.student_id}</p>
+                        <h4>user_id</h4>
+                        <p>${student.user_id}</p>
+                        <h4>first_name</h4>
+                        <p>${student.student_first}</p>
+                        <h4>last_name</h4>
+                        <p>${student.student_last}</p>
+                        </div>
+                            `
+                    }).join('')}
+                    `
                 } else {
-
+                    document.getElementById('cards-roster').innerHTML = `
+                    <div class="card">
+                        <h4>student_id:</h4>
+                        <p>${student[0].student_id}</p>
+                        <h4>user_id</h4>
+                        <p>${student[0].user_id}</p>
+                        <h4>first_name</h4>
+                        <p>${student[0].student_first}</p>
+                        <h4>last_name</h4>
+                        <p>${student[0].student_last}</p>
+                        </div>
+                    `
                 }
-                    
+
             }
         } catch (error) {
             console.log(error);
