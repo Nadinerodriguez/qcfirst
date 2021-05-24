@@ -20,7 +20,7 @@ Nadine Rodriguez
   - CSS: I styled the navbar, footer, homepage and course search page.
   - JavaScript: Using JS, I was able to get the data from the API / server-side to display and inject in our HTML pages.
 - Back End: Researched on what best technologies to use for the backend such as Firebase, Node.js, and Express.js. Tried using Firebase's Authentication for the Sign Up and Login pages but later decided with my partner that his solution was the best approach in the long run. I set up the MySQL database. I designed and created the various tables we needed to store information about the users and courses. I also wrote several test and edge cases for all of our pages .
-  - UML Diagram: <img src="/VisualDesigns/desktop/UML.png" /><br />
+  - UML Diagram: <img src="/public/images/UML.png" /><br />
 
 ## List of features of our app
 - You can sign in to either a student or faculty user
