@@ -2,7 +2,6 @@
 const coursesList = document.getElementById('cards');
 const searchBar = document.getElementById('searchBar');
 let data = [];
-console.log(searchBar);
 
 searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
@@ -56,8 +55,8 @@ const displayCourses = (x) => {
 <h4>Department:</h4>
 <p>${course.dept_name}</p>
 <button class="status-btn">Open</button>
-<button class="add-btn">Add to planner</button>
-<button class="enroll-btn">Enroll</button>
+<button class="add-btn" onclick="addToPlanner()">Add to planner</button>
+<button class="enroll-btn" onclick="addToPlannerMove()">Enroll</button>
 </div>  
     `;
     }).join('');

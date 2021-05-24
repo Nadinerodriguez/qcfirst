@@ -74,6 +74,40 @@ exports.findOneWithUid = (req, res) => {
   });
 };
 
+// Find enrolled courses with student_id
+exports.findEnrolled = (req, res) => {
+  Student.findEnrolled(req.params.student_id, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found enrolled course with student id ${req.params.student_id}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving enrolled courses with student id " + req.params.student_id
+        });
+      }
+    } else res.send(data);
+  });
+};
+
+// Find planned courses with student_id
+exports.findPlanned = (req, res) => {
+  Student.findPlanned(req.params.student_id, (err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found planned course with student id ${req.params.student_id}.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving planned courses with student id " + req.params.student_id
+        });
+      }
+    } else res.send(data);
+  });
+};
+
 // Update a student identified by the student_id in the request
 exports.update = (req, res) => {
     // Validate Request

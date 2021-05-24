@@ -77,6 +77,44 @@ Student.findByUid = (user_id, result) => {
   });
 };
 
+Student.findEnrolled = (student_id, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(`SELECT * FROM courses INNER JOIN student_courses ON courses.course_id = student_courses.co_id WHERE student_courses.stu_id = ${student_id} and student_courses.enroll_status = 'enrolled'`, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+  
+      console.log("enrolled courses: ", res);
+      result(null, res);
+  
+      //release connnection
+      connection.release();
+    });
+  });
+};
+
+Student.findPlanned = (student_id, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(`SELECT * FROM courses INNER JOIN student_courses ON courses.course_id = student_courses.co_id WHERE student_courses.stu_id = ${student_id} and student_courses.enroll_status = 'planned'`, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+  
+      console.log("planned courses: ", res);
+      result(null, res);
+  
+      //release connnection
+      connection.release();
+    });
+  });
+};
+
 Student.getAll = result => {
   pool.getConnection((err, connection) => {
     if (err) throw err;

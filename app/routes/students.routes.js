@@ -14,7 +14,10 @@ module.exports = app => {
     app.get("/students/user/:user_id", students.findOneWithUid);
 
     // Retrieve courses with student_id
-    app.get("/students/courses/:student_id", students.findOneWithUid);
+    app.get("/students/courses/enrolled/:student_id", students.findEnrolled);
+
+    // Retrieve courses with student_id
+    app.get("/students/courses/planned/:student_id", students.findPlanned);
   
     // Update a student with student_id
     app.put("/students/:student_id", students.update);
