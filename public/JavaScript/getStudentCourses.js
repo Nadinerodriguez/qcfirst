@@ -30,7 +30,7 @@ async function getEnrolledCourses() {
                     <input class="checkbox" type="checkbox" id="${data.course_id}" name="${data.course_id}" value="${data.course_id}">
                     </div>`;
         } else {
-            document.getElementById('my-enrolled-courses').innerHTML = `<p>No Planned Courses</p>`;
+            document.getElementById('my-enrolled-courses').innerHTML = `<p>Currently not enrolled to any course</p>`;
         }
     }
 }

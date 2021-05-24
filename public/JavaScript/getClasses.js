@@ -41,7 +41,7 @@ const displayCourses = (x) => {
 <h4>Course Title:</h4>
 <p>${course.course_title}</p>
 <h4>Instructor:</h4>
-<p>Mark (still hard coded)</p>
+<p>${course.faculty_first}</p>
 <h4>Days & Times:</h4>
 <p>${course.course_days + " " + course.course_start_time + " - " + course.course_end_time}</p>
 <h4>Section:</h4>
