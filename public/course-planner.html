@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/navbar-styles.css">
     <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/course-planner-styles.css">
-    <script src='./JavaScript/getStudentCourses.js'></script>
+    <script src='./JavaScript/getCoursePlanner.js'></script>
 </head>
 <body>
 <!-- Nav bar-->
@@ -43,7 +43,9 @@
     </div>
   </header>
 <div class="container">
-    <h1>Course Planner</h1>
+    <div class="planner-text">
+      <h1>Course Planner</h1>
+    </div>
     <div class="grid-container">
         <div class="enrollment-container">
             <header class="enrolled-courses-header">
@@ -53,6 +55,7 @@
             </div>
             <div class="btn-container">
                 <button class="btn manage-btn" type="button" id="manage-enrollment-btn" name="manage-enrollment-btn" value="Manage Enrolled Courses" onclick="location.href='course-enrollment.html'">Manage Enrolled Courses</button>
+                <button class="btn proceed-btn" type="button" id="proceed-enrollment-btn" name="proceed-enrollment-btn" value="Proceed to Enrollment" onclick="location.href='course-search.html'">Find more classes</button>
             </div>
         </div>
         <div class="planned-container">
@@ -60,9 +63,6 @@
                 <h2>Planned Courses</h2>
             </header>
             <div class="entries-container" id="my-planned-courses"></div>
-            <div class="btn-container">
-                <button class="btn proceed-btn" type="button" id="proceed-enrollment-btn" name="proceed-enrollment-btn" value="Proceed to Enrollment" onclick="location.href='course-enrollment.html'">Proceed to Enrollment</button>
-            </div>
         </div>
     </div>
 </div>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/navbar-styles.css">
     <script src="https://kit.fontawesome.com/36ed1868b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/course-enrollment-styles.css">
-    <script src='./JavaScript/getStudentCourses.js'></script>
+    <script src='./JavaScript/getCourseEnrollment.js'></script>
 </head>
 <body>
 <!-- Nav bar-->
@@ -43,7 +43,9 @@
     </div>
   </header>
 <div class="container">
-    <h1>Course Enrollment</h1>
+    <div class="enrollment-text">
+      <h1>Course Enrollment</h1>
+    </div>
     <div class="grid-container">
         <div class="enrollment-container">
             <header class="enrolled-courses-header">
@@ -52,20 +54,14 @@
             <div class="entries-container" id="my-enrolled-courses">
             </div>
             <div class="btn-container">
-                <button class="btn drop-btn" type="button" id="drop-selected-btn" name="drop-selected-btn" value="Drop Selected" onclick="location.href='course-enrollment.html'">Drop Selected</button>
-            </div>
+              <button class="btn proceed-btn" type="button" id="proceed-planner-btn" name="proceed-planner-btn" value="Proceed to Planner" onclick="location.href='course-planner.html'">Proceed to Planner</button>
+          </div>
         </div>
         <div class="planned-container">
             <header class="planned-courses-header">
                 <h2>Planned Courses</h2>
             </header>
             <div class="entries-container" id="my-planned-courses">
-            </div>
-            <div class="btn-container">
-                <button class="btn remove-btn" type="button" id="remove-selected-btn" name="remove-selected-btn" value="Remove Selected" onclick="location.href='course-enrollment.html'">Remove Selected</button>
-                <button class="btn swap-btn" type="button" id="swap-selected-btn" name="swap-selected-btn" value="Swap Selected" onclick="location.href='course-enrollment.html'">Swap Selected</button>
-                <button class="btn enroll-btn" type="button" id="enroll-selected-btn" name="enroll-selected-btn" value="Enroll Selected" onclick="location.href='course-enrollment.html'">Enroll Selected</button>
-                <button class="btn proceed-btn" type="button" id="proceed-planner-btn" name="proceed-planner-btn" value="Proceed to Planner" onclick="location.href='course-planner.html'">Proceed to Planner</button>
             </div>
         </div>
     </div>
