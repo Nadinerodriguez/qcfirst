@@ -46,19 +46,46 @@ async function getPlannedCourses() {
                 ${data.map(function(course) {
                     return `
                      <div class="course-entry">
-                    <label for="${course.course_id}">${course.course_name + " Section "+ course.course_section + " "+ course.course_days + " "+ course.course_start_time + "-"+ course.course_end_time}</label>
-                    <button class="status-btn" type="button" name="class-status-btn" value="Class Status" >Delete</button>
+                    <p>${course.course_name + " Section "+ course.course_section + " "+ course.course_days + " "+ course.course_start_time + "-"+ course.course_end_time}</p>
+                    <button class="status-btn" type="button" name="class-status-btn" value="${course.course_id}" onclick="removeFromPlanner(\'${course.course_id}\')">Delete</button>
                     </div>
                         `
                 }).join('')}
                    `
             } else
                 document.getElementById('my-planned-courses').innerHTML = `<div class="course-entry">
-                    <label for="${data.course_id}">${data[0].course_name + " Section "+ data[0].course_section + " "+ data[0].course_days + " "+ data[0].course_start_time + "-"+ data[0].course_end_time}</label>
-                    <button class="status-btn" type="button" name="class-status-btn" value="Class Status" >Delete</button>
+                    <p>${data[0].course_name + " Section "+ data[0].course_section + " "+ data[0].course_days + " "+ data[0].course_start_time + "-"+ data[0].course_end_time}</p>
+                    <button class="status-btn" type="button" name="class-status-btn" value="${data[0].course_id}" onclick="removeFromPlanner(\'${data[0].course_id}\')">Delete</button>
                     </div>`;
         } else {
             document.getElementById('my-planned-courses').innerHTML = `<p>No Planned Courses</p>`;
         }
+    }
+}
+
+function removeFromPlanner(id) {
+    console.log(id);
+    if (userConfig['type'] === 'student') {
+        fetch('/students/courses/planner', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                stu_id: userConfig['sid'],
+                co_id: id
+            })
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            console.log("DELETE student courses data retrieved");
+            console.log(data);
+            location.reload();
+        })
+        .catch(err => {
+            console.log(err);
+        });
     }
 }

@@ -136,8 +136,8 @@ exports.update = (req, res) => {
     );
 };
 
-// Update a student's course by the course id
-exports.updatePlanner = (req, res) => {
+// create a student's course by the course id
+exports.updateToPlanner = (req, res) => {
   // Validate Request
   if (!req.body) {
     res.status(400).send({
@@ -145,7 +145,7 @@ exports.updatePlanner = (req, res) => {
     });
   }
 
-  Student.updatePlanner(req.body,
+  Student.updateToPlanner(req.body,
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
@@ -155,6 +155,84 @@ exports.updatePlanner = (req, res) => {
         } else {
           res.status(500).send({
             message: "Error updating student with id " + req.body
+          });
+        }
+      } else res.send(data);
+    }
+  );
+};
+
+// Update a student's course by the course id
+exports.updateToEnrolled = (req, res) => {
+  // Validate Request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+  Student.updateToEnrolled(req.body,
+    (err, data) => {
+      if (err) {
+        if (err.kind === "not_found") {
+          res.status(404).send({
+            message: `Not found student course with id ${req.body}.`
+          });
+        } else {
+          res.status(500).send({
+            message: "Error updating student courses with id " + req.body
+          });
+        }
+      } else res.send(data);
+    }
+  );
+};
+
+// Update a student's course by the course id
+exports.deleteFromPlanner = (req, res) => {
+  // Validate Request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+  Student.deleteFromPlanner(req.body,
+    (err, data) => {
+      if (err) {
+        if (err.kind === "not_found") {
+          res.status(404).send({
+            message: `Not found student course with id ${req.body}.`
+          });
+        } else {
+          res.status(500).send({
+            message: "Error deleting student course with id " + req.body
+          });
+        }
+      } else res.send(data);
+    }
+  );
+};
+
+// Update a student's course by the course id
+exports.dropFromEnrolled = (req, res) => {
+  // Validate Request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+  Student.dropFromEnrolled(req.body,
+    (err, data) => {
+      if (err) {
+        if (err.kind === "not_found") {
+          res.status(404).send({
+            message: `Not found student course with id ${req.body}.`
+          });
+        } else {
+          res.status(500).send({
+            message: "Error deleting student course with id " + req.body
           });
         }
       } else res.send(data);

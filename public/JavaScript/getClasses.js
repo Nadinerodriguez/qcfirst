@@ -59,7 +59,7 @@ const displayCourses = (x) => {
 <h4>Department:</h4>
 <p>${course.dept_name}</p>
 <button class="status-btn">${course.number_enrolled <course.course_capacity ? 'Open' : 'Closed'}</button>
-<button class="add-btn" onclick="addToPlanner(\'${course.course_id}\')">Add to planner</button>
+<button class="add-btn" id="${course.course_id}"onclick="addToPlanner(\'${course.course_id}\')">Add to planner</button>
 </div>  
     `;
     }).join('');
@@ -84,14 +84,19 @@ function addToPlanner(id) {
             return res.json();
         })
         .then(data => {
-            console.log("put student courses data retrieved");
+            console.log("insert student courses data retrieved");
             console.log(data);
-            location.reload();
         })
         .catch(err => {
             console.log(err);
         });
     }
+    hideButton(id);
+}
+
+function hideButton(id) {
+    var btn = document.getElementById(id);
+    btn.style.display = "none";
 }
 
 loadCourses();

@@ -163,7 +163,7 @@ Student.updateById = (student_id, student, result) => {
   });
 };
 
-Student.updatePlanner = (student_course, result) => {
+Student.updateToPlanner = (student_course, result) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
     connection.query(
@@ -177,6 +177,78 @@ Student.updatePlanner = (student_course, result) => {
   
         console.log("inserted student: ", { id: res.insertId, ...student_course });
         result(null, { id: res.insertId, ...student_course });
+  
+        //release connnection
+        connection.release();
+    });
+  });
+};
+
+Student.updateToEnrolled = (student_course, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "UPDATE student_courses SET enroll_status = 'enrolled' WHERE stu_id = ? and co_id = ?", [student_course.stu_id, student_course.co_id],
+      (err, res) => {
+        if (err) {
+          console.log("error: ", err);
+          result(null, err);
+          return;
+        }
+        connection.query(
+          "UPDATE courses SET number_enrolled = number_enrolled + 1 course_id = ?", student_course.co_id,
+          (err, res) => {
+            if (err) {
+              console.log("error: ", err);
+              result(null, err);
+              return;
+            }
+      
+            console.log("updated course: ", { student_course });
+            result(null, { student_course });
+        });
+  
+        //release connnection
+        connection.release();
+    });
+  });
+};
+
+Student.deleteFromPlanner = (student_course, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "DELETE FROM student_courses where stu_id = ? and co_id = ?", [student_course.stu_id, student_course.co_id],
+      (err, res) => {
+        if (err) {
+          console.log("error: ", err);
+          result(null, err);
+          return;
+        }
+  
+        console.log("deleted student course: ", { student_course });
+        result(null, { student_course });
+  
+        //release connnection
+        connection.release();
+    });
+  });
+};
+
+Student.dropFromEnrolled = (student_course, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "DELETE FROM student_courses where stu_id = ? and co_id = ?", [student_course.stu_id, student_course.co_id],
+      (err, res) => {
+        if (err) {
+          console.log("error: ", err);
+          result(null, err);
+          return;
+        }
+  
+        console.log("deleted student course: ", { student_course });
+        result(null, { student_course });
   
         //release connnection
         connection.release();
