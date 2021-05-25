@@ -13,6 +13,7 @@ const loadCourses = async () => {
 };
 
 const displayCourses = (x) => {
+    document.getElementById('courses-header').innerHTML = `Number of entries in Courses Table: ${data.length}`;
     const htmlString = x.map(function(course) {
         return `
     <div class="card">
@@ -64,6 +65,7 @@ const loadStudents = async () => {
 };
 
 const displayStudents = (x) => {
+    document.getElementById('students-header').innerHTML = `Number of entries in Students Table: ${data.length}`;
     const htmlString = x.map(function(student) {
         return `
     <div class="card">
@@ -97,6 +99,8 @@ const loadFaculty = async () => {
 };
 
 const displayFaculty = (x) => {
+    document.getElementById('faculty-header').innerHTML = `Number of entries in Faculty Table: ${data.length}`;
+
     const htmlString = x.map(function(faculty) {
         return `
     <div class="card">
@@ -130,6 +134,7 @@ const loadAccounts = async () => {
 };
 
 const displayAccounts = (x) => {
+    document.getElementById('accounts-header').innerHTML = `Number of entries in Accounts Table: ${data.length}`;
     const htmlString = x.map(function(account) {
         return `
     <div class="card">

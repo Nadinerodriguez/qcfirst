@@ -48,6 +48,7 @@ async function getRoster(id) {
             console.log(data);
             if (data.message) {
                 document.getElementById('roster-header').innerHTML = `<h3>No Roster Found.</h3>`;
+                document.getElementById('cards-roster').innerHTML = ``;
             }
             else if (data.length) {
                 if (data.length > 1) {
