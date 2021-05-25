@@ -101,6 +101,13 @@ body {
     color: #edf0f1;
 }
 
+.status-btn {
+    background-color: rgb(76, 194, 52);
+    font-size: 12px;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
 .announcements-section, .holds-section, .enroll-date-section {
   display: flex;
   align-items: center;

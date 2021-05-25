@@ -163,6 +163,27 @@ Student.updateById = (student_id, student, result) => {
   });
 };
 
+Student.updatePlanner = (student_course, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "INSERT INTO student_courses (stu_id, co_id) VALUES (?,?)", [student_course.stu_id, student_course.co_id],
+      (err, res) => {
+        if (err) {
+          console.log("error: ", err);
+          result(null, err);
+          return;
+        }
+  
+        console.log("inserted student: ", { id: res.insertId, ...student_course });
+        result(null, { id: res.insertId, ...student_course });
+  
+        //release connnection
+        connection.release();
+    });
+  });
+};
+
 Student.remove = (student_id, result) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;

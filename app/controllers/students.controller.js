@@ -136,6 +136,32 @@ exports.update = (req, res) => {
     );
 };
 
+// Update a student's course by the course id
+exports.updatePlanner = (req, res) => {
+  // Validate Request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+  Student.updatePlanner(req.body,
+    (err, data) => {
+      if (err) {
+        if (err.kind === "not_found") {
+          res.status(404).send({
+            message: `Not found student with id ${req.body}.`
+          });
+        } else {
+          res.status(500).send({
+            message: "Error updating student with id " + req.body
+          });
+        }
+      } else res.send(data);
+    }
+  );
+};
+
 // Delete a student with the specified student_id in the request
 exports.delete = (req, res) => {
     Student.remove(req.params.student_id, (err, data) => {

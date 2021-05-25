@@ -52,6 +52,7 @@ async function getPlannedCourses() {
                     <button class="status-btn" type="button" name="class-status-btn" value="Class Status" >Open</button>
                     <label for="${course.course_id}">${course.course_name + " Section "+ course.course_section + " "+ course.course_days + " "+ course.course_start_time + "-"+ course.course_end_time}</label>
                    <button class="status-btn" type="button" id="${course.course_id}" name="${course.course_id}" value="${course.course_id}">Add</button>
+                   <button class="status-btn" type="button" name="${course.course_id}" value="${course.course_id}">Add</button>
                     </div>
                         `
                 }).join('')}

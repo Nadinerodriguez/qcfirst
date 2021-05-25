@@ -21,6 +21,9 @@ module.exports = app => {
   
     // Update a student with student_id
     app.put("/students/:student_id", students.update);
+
+    // Update a student's course with course_id as planned
+    app.post("/students/courses/planner", students.updatePlanner);
   
     // Delete a student with student_id
     app.delete("/students/:student_id", students.delete);

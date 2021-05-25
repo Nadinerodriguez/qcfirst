@@ -40,6 +40,41 @@ async function getUserInformation() {
     } else {
         document.getElementById('user-id').innerHTML = `${data.faculty_id}`
     }
+    getEnrolledCourses();
+}
+
+async function getEnrolledCourses() {
+    if (userConfig['type'] === 'student') {
+        var response = await fetch(`/students/courses/enrolled/${userConfig['sid']}`);
+	    var data = await response.json();
+	    console.log("data retrieved");
+        console.log(data);
+
+        //inject here
+
+        if (data.length) {
+            if (data.length > 1) {
+                document.getElementById('my-enrolled-courses').innerHTML = `
+                ${data.map(function(course) {
+                    return `
+                     <div class="course-entry">
+                    <label for="${course.course_id}">${course.course_name + " Section "+ course.course_section + " "+ course.course_days + " "+ course.course_start_time + "-"+ course.course_end_time}</label>
+                    </div>
+                        `
+                }).join('')}
+                   `
+            } else
+                document.getElementById('my-enrolled-courses').innerHTML = `<div class="course-entry">
+                    <label for="${data.course_id}">${data[0].course_name}</label>
+                    <label for="${data.course_id}">${data[0].course_name + " Section "+ data[0].course_section + " "+ data[0].course_days + " "+ data[0].course_start_time + "-"+ data[0].course_end_time}</label>                    
+                    </div>`;
+        } else {
+            document.getElementById('my-enrolled-courses').innerHTML = `
+            <div class="course-entry">
+                <p>Currently not enrolled to any course</p>
+            </div>`;
+        }
+    }
 }
 
     

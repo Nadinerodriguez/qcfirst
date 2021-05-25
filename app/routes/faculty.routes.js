@@ -29,7 +29,7 @@ module.exports = app => {
     app.get("/faculty/courses/roster/:course_id", faculty.findCourseRoster);
 
     // Update a faculty courses with faculty_id
-    app.put("/faculty/courses/new", faculty.createCourse);
+    app.post("/faculty/courses/new", faculty.createCourse);
   
     // Update a faculty with faculty_id
     app.put("/faculty/:faculty_id", faculty.update);

@@ -1,3 +1,5 @@
+var userConfig = JSON.parse(localStorage.getItem('userConfig'));
+console.log(userConfig);
 
 const coursesList = document.getElementById('cards');
 const searchBar = document.getElementById('searchBar');
@@ -56,9 +58,8 @@ const displayCourses = (x) => {
 <p>${course.number_enrolled + "/" + course.course_capacity}</p>
 <h4>Department:</h4>
 <p>${course.dept_name}</p>
-<button class="status-btn">Open</button>
+<button class="status-btn">${course.number_enrolled <course.course_capacity ? 'Open' : 'Closed'}</button>
 <button class="add-btn" onclick="addToPlanner(\'${course.course_id}\')">Add to planner</button>
-<button class="enroll-btn" onclick="addToPlannerMove(\'${course.course_id}\')">Enroll</button>
 </div>  
     `;
     }).join('');
@@ -68,6 +69,29 @@ const displayCourses = (x) => {
 
 function addToPlanner(id) {
     console.log(id);
+    if (userConfig['type'] === 'student') {
+        fetch('/students/courses/planner', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                stu_id: userConfig['sid'],
+                co_id: id
+            })
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            console.log("put student courses data retrieved");
+            console.log(data);
+            location.reload();
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
 }
 
 loadCourses();
