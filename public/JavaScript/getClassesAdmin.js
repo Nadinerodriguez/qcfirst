@@ -1,6 +1,68 @@
+let data = [];
+// // Students_courses Table
+// const studentsCoursesList = document.getElementById('cards-students-courses');
+//
+// const loadStudentsCourses = async () => {
+//     try {
+//         const response = await fetch('/students_courses');
+//         data = await response.json();
+//         displayStudentsCourses(data);
+//     } catch (err) {
+//         console.error(err);
+//     }
+// };
+//
+// const displayStudentsCourses = (x) => {
+//     document.getElementById('students-courses-header').innerHTML = `Number of entries in Students_courses Table: ${data.length}`;
+//     const htmlString = x.map(function(student) {
+//         return `
+//     <div class="card">
+// <h4>student_id:</h4>
+// <p>${student.student_id}</p>
+// <h4>co_id</h4>
+// <p>${student.co_id}</p>
+// <h4>enroll_status</h4>
+// <p>${student.enroll_status}</p>
+// </div>
+//     `;
+//     }).join('');
+//     studentsCoursesList.innerHTML = htmlString;
+// }
+// loadStudentsCourses();
+// // End of students_courses table
+//
+// // Faculty_courses Table
+// const facultyCoursesList = document.getElementById('cards-faculty-courses');
+//
+// const loadFacultyCourses = async () => {
+//     try {
+//         const response = await fetch('/faculty_courses');
+//         data = await response.json();
+//         displayStudentsCourses(data);
+//     } catch (err) {
+//         console.error(err);
+//     }
+// };
+//
+// const displayStudentsCourses = (x) => {
+//     document.getElementById('faculty-courses-header').innerHTML = `Number of entries in Faculty_courses Table: ${data.length}`;
+//     const htmlString = x.map(function(faculty) {
+//         return `
+//     <div class="card">
+// <h4>fac_id:</h4>
+// <p>${faculty.fac_id}</p>
+// <h4>c_id</h4>
+// <p>${faculty.c_id}</p>
+// </div>
+//     `;
+//     }).join('');
+//     facultyCoursesList.innerHTML = htmlString;
+// }
+// loadFacultyCourses();
+// // End of faculty_courses table
+
 //Start of Courses Table
 const coursesList = document.getElementById('cards');
-let data = [];
 
 const loadCourses = async () => {
     try {
@@ -157,12 +219,6 @@ loadAccounts();
 
 // Departments Table
 // End of departments table
-
-// Students_courses Table
-// End of students_courses table
-
-// Faculty_courses Table
-// End of faculty_courses table
 
 // Courses_days Table
 // End of courses_days table
