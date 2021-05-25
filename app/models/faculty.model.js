@@ -270,6 +270,64 @@ Faculty.updateById = (faculty_id, faculty, result) => {
   });
 };
 
+Faculty.dropCourse = (course, result) => {
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      `DELETE FROM faculty_courses WHERE fac_id = ${course.fac_id} AND c_id = ${course.c_id}`,
+      (err, res) => {
+        if (err) {
+          console.log("error: ", err);
+          result(null, err);
+          return;
+        }
+  
+        if (res.affectedRows == 0) {
+          // not found faculty course with the id
+          result({ kind: "not_found" }, null);
+          return;
+        }
+
+        connection.query(
+          "DELETE FROM student_courses WHERE co_id = ?", course.c_id,
+          (err, res) => {
+            if (err) {
+              console.log("error: ", err);
+              result(null, err);
+              return;
+            }
+      
+            if (res.affectedRows == 0) {
+              // not found student course with the id
+              result({ kind: "not_found" }, null);
+              return;
+            }
+            connection.query(
+              "DELETE FROM courses WHERE faculty_id = ? AND course_id = ?", [course.fac_id, course.c_id],
+              (err, res) => {
+                if (err) {
+                  console.log("error: ", err);
+                  result(null, err);
+                  return;
+                }
+          
+                if (res.affectedRows == 0) {
+                  // not found course with the id
+                  result({ kind: "not_found" }, null);
+                  return;
+                }
+          
+                console.log("deleted course: ", { course });
+                result(null, { course });
+            });
+        });
+  
+        //release connnection
+        connection.release();
+    });
+  });
+};
+
 Faculty.remove = (faculty_id, result) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;

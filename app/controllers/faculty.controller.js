@@ -202,6 +202,32 @@ exports.update = (req, res) => {
     );
 };
 
+// Update a faculty identified by the faculty_id in the request
+exports.dropCourse = (req, res) => {
+  // Validate Request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+  Faculty.dropCourse(req.body,
+    (err, data) => {
+      if (err) {
+        if (err.kind === "not_found") {
+          res.status(404).send({
+            message: `Not found faculty with id ${req.body}.`
+          });
+        } else {
+          res.status(500).send({
+            message: "Error updating faculty with id " + req.body
+          });
+        }
+      } else res.send(data);
+    }
+  );
+};
+
 // Delete a faculty with the specified faculty_id in the request
 exports.delete = (req, res) => {
     Faculty.remove(req.params.faculty_id, (err, data) => {

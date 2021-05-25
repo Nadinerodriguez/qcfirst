@@ -30,6 +30,9 @@ module.exports = app => {
 
     // Update a faculty courses with faculty_id
     app.post("/faculty/courses/new", faculty.createCourse);
+
+    // delete a faculty courses with faculty_id
+    app.delete("/faculty/courses/drop", faculty.dropCourse);
   
     // Update a faculty with faculty_id
     app.put("/faculty/:faculty_id", faculty.update);

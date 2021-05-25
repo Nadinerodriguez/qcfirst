@@ -239,11 +239,17 @@ Student.dropFromEnrolled = (student_course, result) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
     connection.query(
-      "DELETE FROM student_courses where stu_id = ? and co_id = ?", [student_course.stu_id, student_course.co_id],
+      "DELETE FROM student_courses WHERE stu_id = ? and co_id = ?", [student_course.stu_id, student_course.co_id],
       (err, res) => {
         if (err) {
           console.log("error: ", err);
           result(null, err);
+          return;
+        }
+
+        if (res.affectedRows == 0) {
+          // not found faculty with the id
+          result({ kind: "not_found" }, null);
           return;
         }
   
