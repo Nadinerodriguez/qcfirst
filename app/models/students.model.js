@@ -196,7 +196,7 @@ Student.updateToEnrolled = (student_course, result) => {
           return;
         }
         connection.query(
-          "UPDATE courses SET number_enrolled = number_enrolled + 1 course_id = ?", student_course.co_id,
+          "UPDATE courses SET number_enrolled = number_enrolled + 1 WHERE course_id = ?", student_course.co_id,
           (err, res) => {
             if (err) {
               console.log("error: ", err);
@@ -239,7 +239,7 @@ Student.dropFromEnrolled = (student_course, result) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
     connection.query(
-      "DELETE FROM student_courses WHERE stu_id = ? and co_id = ?", [student_course.stu_id, student_course.co_id],
+      "DELETE FROM student_courses WHERE stu_id = ? AND co_id = ?", [student_course.stu_id, student_course.co_id],
       (err, res) => {
         if (err) {
           console.log("error: ", err);
@@ -252,9 +252,19 @@ Student.dropFromEnrolled = (student_course, result) => {
           result({ kind: "not_found" }, null);
           return;
         }
-  
-        console.log("deleted student course: ", { student_course });
-        result(null, { student_course });
+        
+        connection.query(
+          "UPDATE courses SET number_enrolled = number_enrolled - 1 WHERE course_id = ?", student_course.co_id,
+          (err, res) => {
+            if (err) {
+              console.log("error: ", err);
+              result(null, err);
+              return;
+            }
+      
+            console.log("updated course: ", { student_course });
+            result(null, { student_course });
+        });
   
         //release connnection
         connection.release();
