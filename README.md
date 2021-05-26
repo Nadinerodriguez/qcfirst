@@ -29,26 +29,26 @@ Nadine Rodriguez
 - You can sign up as a student or faculty. A user needs to provide their first name, last name, email and set a password to sign up for an account.
 - As a Student you can:
   - View your schedule (courses you are currently enrolled to)
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/homepage">Schedule Feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/homepage.html">Schedule Feature</a>
   - View and search for offered courses
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-search">Search feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-search.html">Search feature</a>
   - Add a course to your planner/cart from course search page
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-search">Add to planner feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-search.html">Add to planner feature</a>
   - Enroll or delete a course from course enrollment
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-enrollment">Enroll or Delete feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-enrollment.html">Enroll or Delete feature</a>
   - Drop a course you are enrolled
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-enrollment">Drop feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-enrollment.html">Drop feature</a>
   - Remove a course in your planner/cart or from the course enrollment page
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-planner">Remove feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-planner.html">Remove feature</a>
 - As an Instructor you can:
   - Create and delete a course
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/manage-courses">Create and delete feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/manage-courses.html">Create and delete feature</a>
   - View and search for offered courses
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-search">Search feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/course-search.html">Search feature</a>
   - View the courses they are teaching
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/homepage">Courses they're teaching feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/homepage.html">Courses they're teaching feature</a>
   - View the roster of students enrolled to their courses
-    - <a href="https://qcfirst.danielrodrigu21.repl.co/manage-courses"> Roster feature</a>
+    - <a href="https://qcfirst.danielrodrigu21.repl.co/manage-courses.html"> Roster feature</a>
 
 ## Choice of front-end / client-side technologies
 - We decided to stick to the basic HTML, CSS, and JavaScript. We just chose JavaScript as it's a powerful tool that allowed us to build UI components. We didn't use a framework as we had a time restriction and we felt that we were most comfortable in just using plain JavaScript.
