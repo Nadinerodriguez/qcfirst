@@ -17,7 +17,7 @@ async function getEnrolledCourses() {
                         return `
                         <div class="course-entry">
                         <button class="status-btn" type="button" name="class-status-btn" value="Class Status">${course.number_enrolled < course.course_capacity? 'Open' : 'Close'}</button>
-                        <label for="${course.course_id}">${course.course_name + " Section "+ course.course_section + " "+ course.course_days + " "+ course.course_start_time + "-"+ course.course_end_time}</label>
+                        <p for="${course.course_id}" onclick="getRoster(\'${course.course_id}\')">${course.course_name + " Section "+ course.course_section + " "+ course.course_days + " "+ course.course_start_time + "-"+ course.course_end_time}</p>
                         <button class="status-btn" type="button" id="${course.course_id}" name="course_id" value="${course.course_id}" onclick="dropFromCourses(\'${course.course_id}\')">Drop</button>
 
                         </div>
@@ -27,7 +27,7 @@ async function getEnrolledCourses() {
                 } else
                     document.getElementById('my-created-courses').innerHTML = `<div class="course-entry"> 
                         <button class="status-btn" type="button" name="class-status-btn" value="Class Status">${data[0].number_enrolled < data[0].course_capacity? 'Open' : 'Close'}</button>
-                        <label for="${data[0].course_id}">${data[0].course_name + " Section "+ data[0].course_section + " "+ data[0].course_days + " "+ data[0].course_start_time + "-"+ data[0].course_end_time}</label>                    
+                        <p for="${data[0].course_id}" onclick="getRoster(\'${data[0].course_id}\')">${data[0].course_name + " Section "+ data[0].course_section + " "+ data[0].course_days + " "+ data[0].course_start_time + "-"+ data[0].course_end_time}</p>                    
                        <button class="status-btn" type="button" id="${data[0].course_id}" name="course_id" value="${data[0].course_id}" onclick="dropFromCourses(\'${data[0].course_id}\')">Drop</button>
                         </div>`;
             } else {
